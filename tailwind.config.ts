@@ -72,6 +72,11 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			boxShadow: {
+				'crimson': '0 0 30px hsl(348 83% 47% / 0.3)',
+				'blood': '0 0 50px hsl(0 100% 27% / 0.2)',
+				'dark': '0 10px 30px hsl(0 0% 0% / 0.8)'
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {

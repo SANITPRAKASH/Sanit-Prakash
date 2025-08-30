@@ -134,14 +134,20 @@
   /* Warrior Button Variants */
   .btn-warrior {
     @apply bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold;
-    @apply hover:shadow-crimson transition-all duration-300 hover:scale-105;
-    @apply border border-primary/20;
+    @apply transition-all duration-300 hover:scale-105 border border-primary/20;
+  }
+
+  .btn-warrior:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
   .btn-blood {
     @apply bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold;
-    @apply hover:border-primary hover:text-primary hover:shadow-crimson;
-    @apply transition-all duration-300;
+    @apply hover:border-primary hover:text-primary transition-all duration-300;
+  }
+
+  .btn-blood:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
   /* Crimson Glow Effects */
@@ -171,13 +177,13 @@
   /* Project Cards */
   .project-card {
     @apply bg-card border border-border rounded-xl p-6;
-    @apply hover:border-primary/50 hover:shadow-crimson;
-    @apply transition-all duration-500;
+    @apply hover:border-primary/50 transition-all duration-500;
     background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card)) 50%, hsl(var(--primary) / 0.05));
   }
 
   .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
   /* Glitch Animation */
