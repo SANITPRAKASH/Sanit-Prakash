@@ -22,21 +22,21 @@ const Hero = () => {
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           <span className="block text-white">Hey, I'm</span>
-          <span className="block text-red-500">Sanit ⚔️</span>
+          <span className="block text-red-500">Sanit</span>
         </h1>
         
         {/* Subtitle */}
         <div className="text-xl md:text-2xl mb-4 text-gray-300">
-          <span className="text-red-400 font-semibold">Full-Stack Engineer</span>
+          <span className="text-red-400 font-semibold">Full-Stack Developer</span>
           <span className="mx-2">•</span>
           <span className="text-red-400 font-semibold">AI & Cloud Explorer</span>
           <span className="mx-2">•</span>
-          <span className="text-red-400 font-semibold">MMA Coder 🥋</span>
+          <span className="text-red-400 font-semibold">MMA Enthusiast 🥋</span>
         </div>
         
         {/* Tagline */}
         <p className="text-lg md:text-xl mb-8 text-white/80 font-mono">
-          "I don't just code apps, I <span className="text-red-500 font-bold">forge weapons of impact</span>"
+          "Building <span className="text-red-500 font-bold">scalable applications</span> that make an impact"
         </p>
         
         {/* CTA Buttons */}
@@ -46,7 +46,7 @@ const Hero = () => {
             className="bg-red-600 hover:bg-red-700 text-white px-6 py-3"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
-            View My Arsenal
+            View My Work
           </Button>
           
           <Button 
@@ -55,7 +55,7 @@ const Hero = () => {
             onClick={() => window.open('/resume.pdf', '_blank')}
           >
             <FileText className="w-4 h-4 mr-2" />
-            Battle Resume
+            Download Resume
           </Button>
           
           <Button 

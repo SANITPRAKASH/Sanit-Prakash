@@ -21,10 +21,10 @@ const Index = () => {
       <footer className="py-8 px-6 border-t border-red-500/20">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Sanit Prakash. Built with React, TypeScript & Warrior Spirit.
+            © 2025 Sanit Prakash. Built with React, TypeScript & Passion.
           </p>
           <p className="text-xs text-red-500 mt-2 font-mono">
-            ⚔️ Code • Train • Conquer ⚔️
+            Code • Train • Excel
           </p>
         </div>
       </footer>

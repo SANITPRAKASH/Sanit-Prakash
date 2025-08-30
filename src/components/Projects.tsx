@@ -9,7 +9,7 @@ const Projects = () => {
   const categories = ["All", "Full-Stack", "Frontend", "Backend", "Mobile", "AI & ML"];
 
   const projects = [
-    // Full-Stack Bloodlines
+    // Full-Stack Projects
     {
       id: 1,
       title: "AI Form Generator",
@@ -77,7 +77,7 @@ const Projects = () => {
       status: "Educational Platform"
     },
 
-    // Frontend Edge
+    // Frontend Projects
     {
       id: 7,
       title: "Nike Product Showcase",
@@ -123,7 +123,7 @@ const Projects = () => {
       status: "Utility Tools"
     },
 
-    // Backend Core
+    // Backend Projects
     {
       id: 11,
       title: "Java Social Backend",
@@ -147,7 +147,7 @@ const Projects = () => {
       status: "Practice Project"
     },
 
-    // Mobile Hunt
+    // Mobile Projects
     {
       id: 13,
       title: "React Native Restate",
@@ -171,7 +171,7 @@ const Projects = () => {
       status: "Health & Fitness"
     },
 
-    // AI & Dark Arts
+    // AI & Machine Learning
     {
       id: 15,
       title: "Fake Job Post Detection",
@@ -197,10 +197,10 @@ const Projects = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-crimson-gradient">Project</span> Bloodlines
+            <span className="text-crimson-gradient">My</span> Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Battle-tested applications forged with cutting-edge technologies and warrior precision.
+            Scalable applications built with cutting-edge technologies and clean architecture.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-blood mx-auto"></div>
         </div>
@@ -209,7 +209,7 @@ const Projects = () => {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
             <Zap className="w-6 h-6 text-primary" />
-            Elite Arsenal
+            Featured Projects
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project) => (
@@ -262,7 +262,7 @@ const Projects = () => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={activeCategory === category ? "warrior" : "blood"}
+              variant={activeCategory === category ? "premium" : "crimson"}
               size="sm"
               onClick={() => setActiveCategory(category)}
             >

@@ -28,10 +28,10 @@ const Experience = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-crimson-gradient">Battle</span> Experience
+            <span className="text-crimson-gradient">Professional</span> Experience
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Forging skills in the fires of real-world development challenges.
+            Building skills through real-world development challenges and collaborative projects.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-blood mx-auto"></div>
         </div>
@@ -99,7 +99,7 @@ const Experience = () => {
             <h3 className="text-xl font-bold text-white mb-2">Current Status</h3>
             <p className="text-muted-foreground mb-4">
               Actively seeking <span className="text-primary font-semibold">full-time opportunities</span> to continue 
-              forging impactful software solutions and growing as a code warrior.
+              building impactful software solutions and growing as a developer.
             </p>
             <Badge variant="outline" className="border-primary text-primary pulse-crimson">
               Open to Full-Time Roles

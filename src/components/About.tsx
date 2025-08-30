@@ -3,15 +3,15 @@ import { Code, Zap, Shield, Coffee } from "lucide-react";
 
 const About = () => {
   const skills = {
-    "Backend Bloodline": ["Spring Boot", "Node.js", "Express", "REST APIs", "WebSocket"],
-    "Frontend Edge": ["React", "Next.js", "React Native", "Tailwind", "TypeScript"],
-    "Cloud Arsenal": ["AWS", "Docker", "Kubernetes", "Supabase", "Firebase"],
-    "Database Core": ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM"],
-    "DevOps Warfare": ["GitHub Actions", "CI/CD", "Jest", "Cypress"]
+    "Backend Technologies": ["Spring Boot", "Node.js", "Express", "REST APIs", "WebSocket"],
+    "Frontend Technologies": ["React", "Next.js", "React Native", "Tailwind", "TypeScript"],
+    "Cloud Platforms": ["AWS", "Docker", "Kubernetes", "Supabase", "Firebase"],
+    "Database Technologies": ["PostgreSQL", "MySQL", "MongoDB", "Prisma ORM"],
+    "DevOps Tools": ["GitHub Actions", "CI/CD", "Jest", "Cypress"]
   };
 
   const achievements = [
-    { icon: Shield, title: "AWS Practitioner", desc: "Certified Cloud Warrior" },
+    { icon: Shield, title: "AWS Practitioner", desc: "Cloud Certified" },
     { icon: Code, title: "HackerRank Java", desc: "Top Global Rank" },
     { icon: Zap, title: "GitHub Achievements", desc: "Pull Shark • YOLO • Quickdraw" },
     { icon: Coffee, title: "MMA Training", desc: "Discipline & Focus" }
@@ -23,7 +23,7 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-crimson-gradient">Code Warrior</span> Profile
+            <span className="text-crimson-gradient">About</span> Me
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-blood mx-auto"></div>
         </div>
@@ -32,10 +32,10 @@ const About = () => {
           {/* About Text */}
           <div className="space-y-6">
             <div className="project-card">
-              <h3 className="text-2xl font-bold text-white mb-4">The Code Warrior</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Developer Profile</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                I'm <span className="text-primary font-semibold">Sanit Prakash</span>, a software engineer who forges scalable, 
-                impactful digital weapons. By day, I'm shipping features in web & mobile apps using 
+                I'm <span className="text-primary font-semibold">Sanit Prakash</span>, a software engineer who builds scalable, 
+                impactful applications. By day, I'm shipping features in web & mobile apps using 
                 <span className="text-primary"> Java, Spring Boot, React, and Next.js</span>.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -44,14 +44,14 @@ const About = () => {
                 technological boundaries.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I believe good software is like a <span className="text-crimson-gradient font-semibold">warrior's weapon</span>—
-                structured, powerful, and capable of making real impact.
+                I believe good software is <span className="text-crimson-gradient font-semibold">well-architected</span>—
+                structured, scalable, and capable of making real impact.
               </p>
             </div>
 
             {/* Fun Facts */}
             <div className="project-card">
-              <h4 className="text-lg font-semibold text-white mb-3">Battle Stats ⚔️</h4>
+              <h4 className="text-lg font-semibold text-white mb-3">Quick Facts</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
@@ -77,7 +77,7 @@ const About = () => {
           <div className="space-y-8">
             {/* Skills */}
             <div className="project-card">
-              <h3 className="text-xl font-bold text-white mb-6">Skill Constellations</h3>
+              <h3 className="text-xl font-bold text-white mb-6">Technical Skills</h3>
               <div className="space-y-4">
                 {Object.entries(skills).map(([category, skillList]) => (
                   <div key={category}>
@@ -100,7 +100,7 @@ const About = () => {
 
             {/* Achievements */}
             <div className="project-card">
-              <h3 className="text-xl font-bold text-white mb-6">Battle Achievements</h3>
+              <h3 className="text-xl font-bold text-white mb-6">Achievements</h3>
               <div className="grid grid-cols-2 gap-4">
                 {achievements.map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="text-center p-3 border border-primary/20 rounded-lg hover:border-primary/40 transition-colors">

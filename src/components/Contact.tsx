@@ -40,10 +40,10 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let's <span className="text-crimson-gradient">Code in Crimson</span>
+            Let's <span className="text-crimson-gradient">Build Together</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Ready to forge something powerful together? Reach out and let's build digital weapons that make an impact.
+            Ready to create something amazing together? Reach out and let's build applications that make an impact.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-blood mx-auto"></div>
         </div>
@@ -52,7 +52,7 @@ const Contact = () => {
           {/* Contact Methods */}
           <div className="space-y-6">
             <div className="project-card">
-              <h3 className="text-xl font-bold text-white mb-6">Battle Communication Channels</h3>
+              <h3 className="text-xl font-bold text-white mb-6">Contact Methods</h3>
               <div className="space-y-4">
                 {contactMethods.map(({ icon: Icon, label, value, href, description }) => (
                   <a 
@@ -85,12 +85,11 @@ const Contact = () => {
                 For immediate opportunities or project discussions
               </p>
               <Button 
-                variant="warrior"
-                className="w-full"
-                onClick={() => window.open('mailto:sanitprakash@outlook.com?subject=Let\'s build something powerful together&body=Hi Sanit,\n\nI\'d like to discuss...', '_blank')}
+                className="w-full bg-red-600 hover:bg-red-700 text-white"
+                onClick={() => window.open('mailto:sanitprakash@outlook.com?subject=Let\'s build something amazing together&body=Hi Sanit,\n\nI\'d like to discuss...', '_blank')}
               >
                 <Mail className="w-4 h-4 mr-2" />
-                Send Battle Invitation
+                Get In Touch
               </Button>
             </div>
           </div>
@@ -98,7 +97,7 @@ const Contact = () => {
           {/* Status & Availability */}
           <div className="space-y-6">
             <div className="project-card">
-              <h3 className="text-xl font-bold text-white mb-6">Current Battle Status</h3>
+              <h3 className="text-xl font-bold text-white mb-6">Current Status</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-3 bg-primary/5 rounded-lg border border-primary/20">
                   <span className="text-white">Status</span>
@@ -145,13 +144,13 @@ const Contact = () => {
             </div>
 
             <div className="project-card text-center">
-              <h4 className="text-lg font-bold text-white mb-2">Warrior's Promise</h4>
+              <h4 className="text-lg font-bold text-white mb-2">My Commitment</h4>
               <p className="text-muted-foreground text-sm italic">
-                "Every line of code is forged with purpose, every project built with passion, 
-                and every challenge faced with the discipline of a warrior."
+                "Every line of code is written with purpose, every project built with passion, 
+                and every challenge approached with dedication and focus."
               </p>
               <div className="mt-4 pt-4 border-t border-primary/20">
-                <p className="text-primary text-xs font-mono">⚔️ Code • Train • Conquer ⚔️</p>
+                <p className="text-primary text-xs font-mono">Code • Train • Excel</p>
               </div>
             </div>
           </div>

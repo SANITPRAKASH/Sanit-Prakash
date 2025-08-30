@@ -18,8 +18,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        warrior: "bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:shadow-crimson transition-all duration-300 hover:scale-105 border border-primary/20",
-        blood: "bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold hover:border-primary hover:text-primary hover:shadow-crimson transition-all duration-300",
+        premium: "bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:shadow-crimson transition-all duration-300 hover:scale-105 border border-primary/20",
+        crimson: "bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold hover:border-primary hover:text-primary hover:shadow-crimson transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
