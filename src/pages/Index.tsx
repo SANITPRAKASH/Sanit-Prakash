@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <main>
         <Hero />
@@ -18,12 +18,12 @@ const Index = () => {
       </main>
       
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-primary/20">
+      <footer className="py-8 px-6 border-t border-red-500/20">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-gray-400 text-sm">
             © 2025 Sanit Prakash. Built with React, TypeScript & Warrior Spirit.
           </p>
-          <p className="text-xs text-primary mt-2 font-mono">
+          <p className="text-xs text-red-500 mt-2 font-mono">
             ⚔️ Code • Train • Conquer ⚔️
           </p>
         </div>
