@@ -197,100 +197,54 @@ const Projects = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-crimson-gradient">My</span> Projects
+            <span className="text-cosmic-gradient">My</span> Projects
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
             Scalable applications built with cutting-edge technologies and clean architecture.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-blood mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-cosmic mx-auto glass-effect"></div>
         </div>
 
-        {/* Featured Projects */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-            <Zap className="w-6 h-6 text-primary" />
-            Featured Projects
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <div key={project.id} className="project-card group">
-                <div className="flex justify-between items-start mb-4">
-                  <Badge variant="outline" className="border-primary/30 text-primary text-xs">
-                    {project.status}
-                  </Badge>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="ghost" className="p-2 h-8 w-8" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4" />
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="ghost" className="p-2 h-8 w-8" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-                
-                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h4>
-                
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-1">
-                  {project.tech.slice(0, 4).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs bg-secondary/30 border-primary/10">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <Badge variant="secondary" className="text-xs bg-secondary/30 border-primary/10">
-                      +{project.tech.length - 4}
-                    </Badge>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <Button
               key={category}
-              variant={activeCategory === category ? "premium" : "crimson"}
+              variant={activeCategory === category ? "default" : "outline"}
               size="sm"
               onClick={() => setActiveCategory(category)}
+              className={`${
+                activeCategory === category 
+                  ? "btn-cosmic cosmic-glow" 
+                  : "btn-glass hover:cosmic-glow"
+              } transition-all duration-400`}
             >
               {category}
             </Button>
           ))}
         </div>
 
-        {/* All Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card group">
+            <div key={project.id} className="project-card group float">
               <div className="flex justify-between items-start mb-4">
-                <div className="flex gap-2">
-                  <Badge variant="outline" className="border-primary/30 text-primary text-xs">
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Badge variant="outline" className="border-primary/40 text-primary text-xs glass-effect">
                     {project.category}
                   </Badge>
-                  <Badge variant="secondary" className="text-xs bg-secondary/20">
+                  <Badge variant="secondary" className="text-xs glass-effect">
                     {project.status}
                   </Badge>
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="ghost" className="p-2 h-8 w-8" asChild>
+                  <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:cosmic-glow" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4" />
                     </a>
                   </Button>
-                  <Button size="sm" variant="ghost" className="p-2 h-8 w-8" asChild>
+                  <Button size="sm" variant="ghost" className="p-2 h-8 w-8 hover:cosmic-glow" asChild>
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4" />
                     </a>
@@ -298,23 +252,23 @@ const Projects = () => {
                 </div>
               </div>
               
-              <h4 className="text-lg font-bold text-white mb-3 group-hover:text-primary transition-colors">
+              <h4 className="text-lg font-bold text-foreground mb-3 group-hover:text-gradient transition-all duration-400">
                 {project.title}
               </h4>
               
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                 {project.description}
               </p>
               
-              <div className="flex flex-wrap gap-1">
-                {project.tech.slice(0, 3).map((tech) => (
-                  <Badge key={tech} variant="secondary" className="text-xs bg-secondary/30 border-primary/10">
+              <div className="flex flex-wrap gap-2">
+                {project.tech.slice(0, 4).map((tech) => (
+                  <Badge key={tech} variant="secondary" className="text-xs glass-effect border-primary/20">
                     {tech}
                   </Badge>
                 ))}
-                {project.tech.length > 3 && (
-                  <Badge variant="secondary" className="text-xs bg-secondary/30 border-primary/10">
-                    +{project.tech.length - 3}
+                {project.tech.length > 4 && (
+                  <Badge variant="secondary" className="text-xs glass-effect border-cosmic/30">
+                    +{project.tech.length - 4}
                   </Badge>
                 )}
               </div>

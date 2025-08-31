@@ -52,9 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				blood: {
-					DEFAULT: 'hsl(var(--blood))',
-					foreground: 'hsl(var(--blood-foreground))'
+				cosmic: {
+					DEFAULT: 'hsl(var(--cosmic))',
+					foreground: 'hsl(var(--cosmic-foreground))'
+				},
+				stellar: {
+					DEFAULT: 'hsl(var(--stellar))',
+					foreground: 'hsl(var(--stellar-foreground))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -73,9 +77,10 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			boxShadow: {
-				'crimson': '0 0 30px hsl(348 83% 47% / 0.3)',
-				'blood': '0 0 50px hsl(0 100% 27% / 0.2)',
-				'dark': '0 10px 30px hsl(0 0% 0% / 0.8)'
+				'glass': '0 8px 32px hsl(194 100% 50% / 0.15)',
+				'cosmic': '0 0 40px hsl(258 90% 66% / 0.3)',
+				'stellar': '0 0 20px hsl(45 100% 75% / 0.4)',
+				'neumorphism': '20px 20px 60px hsl(228 45% 4%), -20px -20px 60px hsl(240 27% 12%)'
 			},
 			keyframes: {
 				'accordion-down': {
