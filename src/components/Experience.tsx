@@ -21,6 +21,16 @@ const Experience = () => {
       tech: ["React", "Node.js", "MongoDB", "Cypress", "GitHub Actions", "Agile"]
     }
   ];
+  const education = {
+    degree: "B.E, Computer Science & Engineering",
+    school: "Don Bosco Institute of Technology, Bangalore",
+    gpa: "8.5 CGPA",
+    period: "2021–2025",
+    coursework: [
+      "Data Structures and Algorithms", "System Design", "Cloud Computing", "Generative AI",
+      "Mobile Native Application", "Database Management", "DevOps", "UI/UX design"
+    ]
+  };
 
   return (
     <section id="experience" className="py-20 px-6">
@@ -91,7 +101,53 @@ const Experience = () => {
               </div>
             </div>
           ))}
-        </div>
+           <div className="relative sm:pl-20">
+                <div className="absolute left-2.5 sm:left-6 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-secondary rounded-full shadow-glow-secondary hidden sm:block"></div>
+                
+                <div className="project-card p-4 sm:p-6  ">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                    <div className="mb-4 lg:mb-0">
+                      <h3 className="text-xl sm:text-2xl font-bold text-gradient-secondary mb-1 sm:mb-2">
+                        {education.degree}
+                      </h3>
+                      <div className="flex items-center text-muted-foreground">
+                        <div className="flex items-center">
+                          <Building className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                          <span className="text-sm sm:text-base">{education.school}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col lg:items-end">
+                      <Badge className="bg-accent/20 text-accent border-accent/30 mb-2 w-fit text-xs sm:text-sm">
+                        {education.gpa}
+                      </Badge>
+                      <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
+                        <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                        {education.period}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-base sm:text-lg font-semibold text-gradient-gold mb-3">Relevant Coursework</h4>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                      {education.coursework.map((course, idx) => (
+                        <Badge 
+                          key={idx}
+                          variant="secondary"
+                          className="bg-secondary/30 border-primary/10 text-xs"
+                        >
+                          {course}
+                        </Badge>
+                      ))}
+                    </div>
+                   
+        
+                  </div>
+                </div>
+              </div>
+            {/* End of timeline container */}
+          </div>
 
         {/* Current Status */}
         <div className="text-center mt-16">

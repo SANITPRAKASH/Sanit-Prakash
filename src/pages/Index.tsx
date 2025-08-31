@@ -24,7 +24,7 @@ const Index = () => {
             © 2025 Sanit Prakash. Built with React, TypeScript & Passion.
           </p>
           <p className="text-xs text-red-500 mt-2 font-mono">
-            Code • Train • Excel
+            Code • and • Excel
           </p>
         </div>
       </footer>
