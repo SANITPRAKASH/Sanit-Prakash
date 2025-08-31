@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Blood Black & Crimson Red Design System - Code Warrior Theme */
+/* Black Panther Wakandan Design System - Purple & Black Theme */
 
 @layer base {
   :root {
@@ -17,25 +17,25 @@
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 100%;
 
-    /* Crimson System */
-    --primary: 348 83% 47%; /* Crimson red */
+    /* Wakandan Purple System */
+    --primary: 280 100% 70%; /* Vibrant Wakandan purple */
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 18%; /* Steel gray */
     --secondary-foreground: 0 0% 100%;
 
-    /* Blood Red Variants */
-    --blood: 0 100% 27%; /* Deep blood red */
-    --blood-foreground: 0 0% 100%;
+    /* Purple Variants */
+    --wakanda: 270 91% 65%; /* Royal Wakandan purple */
+    --wakanda-foreground: 0 0% 100%;
 
-    --crimson-glow: 348 83% 47%;
-    --crimson-dark: 348 83% 27%;
+    --wakanda-glow: 280 100% 70%;
+    --wakanda-dark: 270 91% 35%;
 
     /* Muted System */
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 63.9%;
 
-    --accent: 348 83% 47%;
+    --accent: 280 100% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -44,18 +44,18 @@
     /* Interface Elements */
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 348 83% 47%;
+    --ring: 280 100% 70%;
 
     --radius: 0.75rem;
 
     /* Custom Gradients */
-    --gradient-blood: linear-gradient(135deg, hsl(0 0% 0%), hsl(348 83% 47% / 0.1), hsl(0 0% 0%));
-    --gradient-crimson: linear-gradient(135deg, hsl(348 83% 47%), hsl(0 100% 27%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(348 83% 47%));
+    --gradient-wakanda: linear-gradient(135deg, hsl(0 0% 0%), hsl(280 100% 70% / 0.1), hsl(0 0% 0%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 100% 70%), hsl(270 91% 65%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 100% 70%));
     
     /* Shadows & Glows */
-    --shadow-crimson: 0 0 30px hsl(348 83% 47% / 0.3);
-    --shadow-blood: 0 0 50px hsl(0 100% 27% / 0.2);
+    --shadow-wakanda: 0 0 30px hsl(280 100% 70% / 0.3);
+    --shadow-purple: 0 0 50px hsl(270 91% 65% / 0.2);
     --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.8);
     
     /* Animations */
@@ -63,19 +63,12 @@
     --transition-glow: all 0.5s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -125,38 +118,38 @@
 
   body {
     @apply bg-background text-foreground font-mono;
-    background: var(--gradient-blood);
+    background: var(--gradient-wakanda);
     background-attachment: fixed;
   }
 }
 
 @layer components {
-  /* Warrior Button Variants */
+  /* Wakandan Warrior Button Variants */
   .btn-warrior {
-    @apply bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply bg-gradient-to-r from-primary to-wakanda text-primary-foreground px-6 py-3 rounded-lg font-semibold;
     @apply transition-all duration-300 hover:scale-105 border border-primary/20;
   }
 
   .btn-warrior:hover {
-    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
+    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
   }
 
-  .btn-blood {
+  .btn-wakanda {
     @apply bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold;
     @apply hover:border-primary hover:text-primary transition-all duration-300;
   }
 
-  .btn-blood:hover {
-    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
+  .btn-wakanda:hover {
+    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
   }
 
-  /* Crimson Glow Effects */
-  .crimson-glow {
-    box-shadow: var(--shadow-crimson);
+  /* Wakandan Glow Effects */
+  .wakanda-glow {
+    box-shadow: var(--shadow-wakanda);
   }
 
-  .blood-glow {
-    box-shadow: var(--shadow-blood);
+  .purple-glow {
+    box-shadow: var(--shadow-purple);
   }
 
   /* Text Gradients */
@@ -167,8 +160,8 @@
     background-clip: text;
   }
 
-  .text-crimson-gradient {
-    background: var(--gradient-crimson);
+  .text-purple-gradient {
+    background: var(--gradient-purple);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,7 +176,7 @@
 
   .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
+    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
   }
 
   /* Glitch Animation */
@@ -200,12 +193,36 @@
   }
 
   /* Pulse Animation */
-  @keyframes pulse-crimson {
+  @keyframes pulse-wakanda {
     0%, 100% { box-shadow: 0 0 10px hsl(var(--primary) / 0.3); }
     50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
   }
 
-  .pulse-crimson {
-    animation: pulse-crimson 2s ease-in-out infinite;
+  .pulse-wakanda {
+    animation: pulse-wakanda 2s ease-in-out infinite;
+  }
+
+  /* Wakandan Tech Patterns */
+  .wakanda-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(280 100% 70% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(270 91% 65% / 0.1) 0%, transparent 50%);
+  }
+
+  /* Vibranium Shimmer Effect */
+  @keyframes vibranium-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .vibranium-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(280 100% 70% / 0.2),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: vibranium-shimmer 3s ease-in-out infinite;
   }
 }

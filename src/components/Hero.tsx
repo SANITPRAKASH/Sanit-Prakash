@@ -2,10 +2,10 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, FileText, Mail } from "lucide-react";
-import PortalPhotoFrame from "./PortalPhotoFrame";
+import WakandaKineticFrame from "./WakandaKineticFrame";
 
 const Hero = () => {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -14,15 +14,15 @@ const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
     >
-      {/* Dark Background with enhanced gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black" />
+      {/* Wakandan Background with enhanced gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-950/20 to-black" />
 
-      {/* Floating particles background */}
+      {/* Floating vibranium particles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-red-500/20 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-purple-500/30 rounded-full animate-pulse"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
@@ -33,51 +33,62 @@ const Hero = () => {
         ))}
       </div>
 
+      {/* Wakandan Tech Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="w-full h-full" style={{
+          backgroundImage: `
+            linear-gradient(rgba(139, 69, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(139, 69, 255, 0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }}></div>
+      </div>
+
       {/* Content */}
-      <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
+      <div className="relative z-10 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Main Heading with Kinetic Frame */}
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-20 mb-8">
+          <div className="order-2 xl:order-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+              <span className="block text-white mb-2 sm:mb-4">Hey, I'm</span>
+              <span className="block text-purple-400 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent">
+                Sanit Prakash
+              </span>
+            </h1>
+          </div>
 
-        {/* Main Heading with Portal */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold">
-            <span className="block text-white">Hey, I'm</span>
-            <span className="block text-red-500 bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-              Sanit Prakash
-            </span>
-          </h1>
-
-          {/* Portal Photo positioned next to name - moved more to the right */}
-          {/* To adjust position: change 'ml-8' to 'ml-4' (less right) or 'ml-12' (more right) */}
-          <div className="flex-shrink-0 ml-12 lg:ml-20">
-            <PortalPhotoFrame />
+          {/* Wakandan Kinetic Energy Frame positioned next to name */}
+          <div className="flex-shrink-0 order-1 xl:order-2">
+            <WakandaKineticFrame />
           </div>
         </div>
 
         {/* Subtitle */}
-        <div className="text-lg md:text-xl lg:text-2xl mt-20 mb-5 text-gray-300">
-          <span className="text-red-400 font-semibold">Software Engineer</span>
-          <span className="mx-2 text-red-500">•</span>
-          <span className="text-red-400 font-semibold">
+        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-8 lg:mt-16 xl:mt-20 mb-4 md:mb-6 text-gray-300 max-w-4xl mx-auto">
+          <span className="text-purple-400 font-semibold">Software Engineer</span>
+          <span className="mx-1 md:mx-2 text-purple-500">•</span>
+          <span className="text-purple-400 font-semibold">
             Building Web Platforms & React-Native Apps
           </span>
-          <span className="mx-2 text-red-500">•</span>
-          <span className="text-red-400 font-semibold">
+          <span className="mx-1 md:mx-2 text-purple-500">•</span>
+          <span className="text-purple-400 font-semibold">
             Exploring AI & Cloud Systems
           </span>
         </div>
 
         {/* Tagline */}
-        <p className="text-base md:text-lg lg:text-xl mb-10 text-white/80 font-mono max-w-2xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 text-white/80 font-mono max-w-2xl mx-auto px-4">
           "Building{" "}
-          <span className="text-red-500 font-bold">scalable applications</span>{" "}
+          <span className="text-purple-400 font-bold">scalable applications</span>{" "}
           that make an impact"
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
           <Button
             onClick={() => scrollToSection("projects")}
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 transform hover:scale-105 transition-all duration-200"
+            className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-4 md:px-6 py-2 md:py-3 transform hover:scale-105 transition-all duration-200 wakanda-glow"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             View My Work
@@ -85,7 +96,7 @@ const Hero = () => {
 
           <Button
             variant="outline"
-            className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-6 py-3 transform hover:scale-105 transition-all duration-200"
+            className="w-full sm:w-auto border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-4 md:px-6 py-2 md:py-3 transform hover:scale-105 transition-all duration-200"
             onClick={() =>
               window.open(
                 "https://drive.google.com/uc?export=download&id=1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp",
@@ -99,7 +110,7 @@ const Hero = () => {
 
           <Button
             variant="ghost"
-            className="text-red-500 hover:text-red-400 hover:bg-red-500/10 transform hover:scale-105 transition-all duration-200"
+            className="w-full sm:w-auto text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transform hover:scale-105 transition-all duration-200"
             onClick={() => scrollToSection("contact")}
           >
             <Mail className="w-4 h-4 mr-2" />
@@ -108,29 +119,29 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Stats Section - Full Width */}
-      <div className="absolute bottom-20 left-0 right-0 z-10">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid grid-cols-3 gap-4 md:gap-8 pt-8 border-t border-red-500/20 bg-black/40 backdrop-blur-sm rounded-lg p-6">
+      {/* Stats Section - Fully Responsive */}
+      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 lg:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-purple-500/20 bg-black/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 wakanda-pattern">
             <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold text-red-500">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 32+
               </div>
-              <div className="text-xs md:text-sm text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-gray-400">
                 Repositories
               </div>
             </div>
             <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold text-red-500">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 15+
               </div>
-              <div className="text-xs md:text-sm text-gray-400">Projects</div>
+              <div className="text-xs sm:text-sm md:text-base text-gray-400">Projects</div>
             </div>
             <div className="text-center">
-              <div className="text-xl md:text-2xl font-bold text-red-500">
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 3+
               </div>
-              <div className="text-xs md:text-sm text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-gray-400">
                 Years Coding
               </div>
             </div>
@@ -138,18 +149,18 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-red-500/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-red-500 rounded-full mt-2 animate-pulse"></div>
+      {/* Wakandan Scroll Indicator */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-purple-500/50 rounded-full flex justify-center">
+          <div className="w-1 h-2 sm:h-3 bg-purple-400 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
   );
 };
 
-// Add custom CSS
-const styles = `
+// Add Wakandan custom CSS
+const wakandaStyles = `
   @keyframes spin-slow {
     from {
       transform: rotate(0deg);
@@ -162,12 +173,27 @@ const styles = `
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
   }
+
+  @keyframes wakanda-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(139, 69, 255, 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(139, 69, 255, 0.6);
+      transform: scale(1.02);
+    }
+  }
+
+  .wakanda-glow:hover {
+    animation: wakanda-pulse 1.5s ease-in-out infinite;
+  }
 `;
 
 // Inject styles
 if (typeof document !== "undefined") {
   const styleSheet = document.createElement("style");
-  styleSheet.textContent = styles;
+  styleSheet.textContent = wakandaStyles;
   document.head.appendChild(styleSheet);
 }
 
