@@ -2,67 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cosmic Galaxy Design System - Glassmorphism + Neumorphism */
+/* Blood Black & Crimson Red Design System - Code Warrior Theme */
 
 @layer base {
   :root {
-    /* Cosmic Background Colors */
-    --background: 228 45% 7%; /* Deep space midnight blue */
-    --foreground: 0 0% 95%; /* Silver-white */
+    /* Core Theme Colors */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* Pure white */
 
-    /* Glassmorphism Card System */
-    --card: 240 27% 12%; /* Dark cosmic purple */
-    --card-foreground: 0 0% 95%;
+    /* Card System */
+    --card: 0 0% 7.3%; /* Dark charcoal */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 27% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Electric Blue Primary */
-    --primary: 194 100% 50%; /* Electric blue #00CFFF */
-    --primary-foreground: 228 45% 7%;
+    /* Crimson System */
+    --primary: 348 83% 47%; /* Crimson red */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 27% 15%; /* Cosmic gray */
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 18%; /* Steel gray */
+    --secondary-foreground: 0 0% 100%;
 
-    /* Cosmic Purple Variants */
-    --cosmic: 258 90% 66%; /* Violet #8B5CF6 */
-    --cosmic-foreground: 0 0% 95%;
+    /* Blood Red Variants */
+    --blood: 0 100% 27%; /* Deep blood red */
+    --blood-foreground: 0 0% 100%;
 
-    --stellar: 45 100% 75%; /* Star-golden shimmer #FFD580 */
-    --stellar-foreground: 228 45% 7%;
+    --crimson-glow: 348 83% 47%;
+    --crimson-dark: 348 83% 27%;
 
     /* Muted System */
-    --muted: 240 27% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --accent: 258 90% 66%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 348 83% 47%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Interface Elements */
-    --border: 240 27% 15%;
-    --input: 240 27% 12%;
-    --ring: 194 100% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 348 83% 47%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Cosmic Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(228 45% 7%), hsl(258 90% 15%), hsl(228 45% 4%));
-    --gradient-glass: linear-gradient(135deg, hsl(194 100% 50% / 0.1), hsl(258 90% 66% / 0.1));
-    --gradient-stellar: linear-gradient(135deg, hsl(194 100% 50%), hsl(258 90% 66%), hsl(45 100% 75%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 95%), hsl(194 100% 50%));
+    /* Custom Gradients */
+    --gradient-blood: linear-gradient(135deg, hsl(0 0% 0%), hsl(348 83% 47% / 0.1), hsl(0 0% 0%));
+    --gradient-crimson: linear-gradient(135deg, hsl(348 83% 47%), hsl(0 100% 27%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(348 83% 47%));
     
-    /* Glassmorphism Shadows & Glows */
-    --shadow-glass: 0 8px 32px hsl(194 100% 50% / 0.15);
-    --shadow-cosmic: 0 0 40px hsl(258 90% 66% / 0.3);
-    --shadow-stellar: 0 0 20px hsl(45 100% 75% / 0.4);
-    --shadow-neumorphism: 20px 20px 60px hsl(228 45% 4%), -20px -20px 60px hsl(240 27% 12%);
+    /* Shadows & Glows */
+    --shadow-crimson: 0 0 30px hsl(348 83% 47% / 0.3);
+    --shadow-blood: 0 0 50px hsl(0 100% 27% / 0.2);
+    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.8);
     
-    /* Smooth Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.6s ease-in-out;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s ease-in-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -127,50 +125,38 @@
 
   body {
     @apply bg-background text-foreground font-mono;
-    background: var(--gradient-cosmic);
+    background: var(--gradient-blood);
     background-attachment: fixed;
-    min-height: 100vh;
   }
 }
 
 @layer components {
-  /* Glassmorphism Button Variants */
-  .btn-cosmic {
-    @apply bg-gradient-to-r from-primary to-cosmic text-primary-foreground px-6 py-3 rounded-xl font-semibold;
-    @apply transition-all duration-400 hover:scale-105 border border-primary/20;
-    backdrop-filter: blur(10px);
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.8), hsl(var(--cosmic) / 0.8));
+  /* Warrior Button Variants */
+  .btn-warrior {
+    @apply bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply transition-all duration-300 hover:scale-105 border border-primary/20;
   }
 
-  .btn-cosmic:hover {
-    box-shadow: var(--shadow-glass);
+  .btn-warrior:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  .btn-glass {
-    @apply bg-card/20 border border-primary/30 text-foreground px-6 py-3 rounded-xl font-semibold;
-    @apply hover:border-primary hover:text-primary transition-all duration-400;
-    backdrop-filter: blur(15px);
-    background: linear-gradient(135deg, hsl(var(--card) / 0.1), hsl(var(--primary) / 0.05));
+  .btn-blood {
+    @apply bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply hover:border-primary hover:text-primary transition-all duration-300;
   }
 
-  .btn-glass:hover {
-    box-shadow: var(--shadow-glass);
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--cosmic) / 0.1));
+  .btn-blood:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  /* Cosmic Glow Effects */
-  .cosmic-glow {
-    box-shadow: var(--shadow-cosmic);
+  /* Crimson Glow Effects */
+  .crimson-glow {
+    box-shadow: var(--shadow-crimson);
   }
 
-  .stellar-glow {
-    box-shadow: var(--shadow-stellar);
-  }
-
-  .glass-effect {
-    backdrop-filter: blur(20px);
-    background: linear-gradient(135deg, hsl(var(--card) / 0.1), hsl(var(--primary) / 0.05));
-    border: 1px solid hsl(var(--border) / 0.3);
+  .blood-glow {
+    box-shadow: var(--shadow-blood);
   }
 
   /* Text Gradients */
@@ -181,58 +167,45 @@
     background-clip: text;
   }
 
-  .text-cosmic-gradient {
-    background: var(--gradient-stellar);
+  .text-crimson-gradient {
+    background: var(--gradient-crimson);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Glassmorphism Project Cards */
+  /* Project Cards */
   .project-card {
-    @apply rounded-xl p-6 transition-all duration-500;
-    backdrop-filter: blur(20px);
-    background: linear-gradient(135deg, hsl(var(--card) / 0.4), hsl(var(--primary) / 0.05));
-    border: 1px solid hsl(var(--border) / 0.3);
-    box-shadow: var(--shadow-neumorphism);
+    @apply bg-card border border-border rounded-xl p-6;
+    @apply hover:border-primary/50 transition-all duration-500;
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card)) 50%, hsl(var(--primary) / 0.05));
   }
 
   .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-glass), var(--shadow-cosmic);
-    border-color: hsl(var(--primary) / 0.5);
-    background: linear-gradient(135deg, hsl(var(--card) / 0.6), hsl(var(--primary) / 0.1));
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  /* Floating Animation */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+  /* Glitch Animation */
+  @keyframes glitch {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
   }
 
-  .float:hover {
-    animation: float 3s ease-in-out infinite;
+  .glitch:hover {
+    animation: glitch 0.3s ease-in-out;
   }
 
-  /* Cosmic Pulse Animation */
-  @keyframes pulse-cosmic {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(var(--cosmic) / 0.6), 0 0 60px hsl(var(--primary) / 0.4); }
+  /* Pulse Animation */
+  @keyframes pulse-crimson {
+    0%, 100% { box-shadow: 0 0 10px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
   }
 
-  .pulse-cosmic {
-    animation: pulse-cosmic 2s ease-in-out infinite;
-  }
-
-  /* Neumorphism Effect */
-  .neumorphism {
-    background: hsl(var(--card));
-    box-shadow: var(--shadow-neumorphism);
-    border-radius: var(--radius);
-  }
-
-  .neumorphism:hover {
-    box-shadow: inset 5px 5px 10px hsl(var(--background)), 
-                inset -5px -5px 10px hsl(var(--card));
+  .pulse-crimson {
+    animation: pulse-crimson 2s ease-in-out infinite;
   }
 }
