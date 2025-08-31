@@ -2,110 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Cosmic Galaxy Design System - Glassmorphism & Celestial Theme */
+/* Blood Black & Crimson Red Design System - Code Warrior Theme */
 
 @layer base {
   :root {
-    /* Cosmic Core Colors */
-    --background: 240 15% 4%; /* Deep space */
-    --foreground: 0 0% 95%; /* Silver-white */
+    /* Core Theme Colors */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* Pure white */
 
     /* Card System */
-    --card: 240 15% 6%; /* Cosmic card */
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 7.3%; /* Dark charcoal */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 240 15% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Cosmic Primary - Electric Blue */
-    --primary: 195 100% 50%; /* Electric blue */
-    --primary-foreground: 240 15% 4%;
+    /* Crimson System */
+    --primary: 348 83% 47%; /* Crimson red */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 15% 10%; /* Space medium */
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 18%; /* Steel gray */
+    --secondary-foreground: 0 0% 100%;
 
-    /* Cosmic Accent - Violet */
-    --accent: 262 83% 58%; /* Cosmic violet */
-    --accent-foreground: 0 0% 95%;
+    /* Blood Red Variants */
+    --blood: 0 100% 27%; /* Deep blood red */
+    --blood-foreground: 0 0% 100%;
+
+    --crimson-glow: 348 83% 47%;
+    --crimson-dark: 348 83% 27%;
 
     /* Muted System */
-    --muted: 240 15% 10%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --accent: 348 83% 47%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Interface Elements */
-    --border: 240 15% 15%;
-    --input: 240 15% 10%;
-    --ring: 195 100% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 348 83% 47%;
 
     --radius: 0.75rem;
 
-    /* Cosmic Color Palette */
-    --cosmic-blue: 195 100% 50%;
-    --cosmic-purple: 262 83% 58%;
-    --cosmic-gold: 45 93% 70%;
-    --cosmic-silver: 0 0% 92%;
-    --space-deep: 240 15% 4%;
-    --space-medium: 240 10% 8%;
-    --space-light: 240 8% 12%;
-
-    /* Cosmic Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(var(--space-deep)), hsl(var(--cosmic-purple) / 0.3), hsl(var(--space-deep)));
-    --gradient-stellar: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)));
-    --gradient-portal: radial-gradient(circle, hsl(var(--cosmic-blue) / 0.3), hsl(var(--cosmic-purple) / 0.2), transparent);
-    --gradient-text: linear-gradient(135deg, hsl(var(--cosmic-blue)), hsl(var(--cosmic-purple)));
+    /* Custom Gradients */
+    --gradient-blood: linear-gradient(135deg, hsl(0 0% 0%), hsl(348 83% 47% / 0.1), hsl(0 0% 0%));
+    --gradient-crimson: linear-gradient(135deg, hsl(348 83% 47%), hsl(0 100% 27%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(348 83% 47%));
     
     /* Shadows & Glows */
-    --shadow-cosmic: 0 0 40px hsl(var(--cosmic-blue) / 0.3);
-    --shadow-portal: 0 0 60px hsl(var(--cosmic-purple) / 0.4);
-    --glow-stellar: 0 0 20px hsl(var(--cosmic-gold) / 0.6);
+    --shadow-crimson: 0 0 30px hsl(348 83% 47% / 0.3);
+    --shadow-blood: 0 0 50px hsl(0 100% 27% / 0.2);
+    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.8);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.5s ease-in-out;
 
-    /* Sidebar */
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 240 15% 4%;
-    --foreground: 0 0% 95%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 240 15% 6%;
-    --card-foreground: 0 0% 95%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 240 15% 6%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 195 100% 50%;
-    --primary-foreground: 240 15% 4%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 240 15% 10%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 15% 10%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 262 83% 58%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 15% 15%;
-    --input: 240 15% 10%;
-    --ring: 195 100% 50%;
-
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -124,51 +125,38 @@
 
   body {
     @apply bg-background text-foreground font-mono;
-    background: var(--gradient-cosmic);
+    background: var(--gradient-blood);
     background-attachment: fixed;
   }
 }
 
 @layer components {
-  /* Cosmic Button Variants */
-  .btn-cosmic {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white border border-blue-400/30 
-           hover:from-blue-400 hover:to-purple-500 transition-all duration-300 backdrop-blur-sm
-           px-6 py-3 rounded-lg font-semibold;
-    box-shadow: 0 0 20px hsl(var(--cosmic-blue) / 0.3);
+  /* Warrior Button Variants */
+  .btn-warrior {
+    @apply bg-gradient-to-r from-primary to-blood text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply transition-all duration-300 hover:scale-105 border border-primary/20;
   }
 
-  .btn-cosmic:hover {
-    box-shadow: 0 0 30px hsl(var(--cosmic-blue) / 0.5);
-    transform: translateY(-2px);
+  .btn-warrior:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  .btn-ghost-cosmic {
-    @apply bg-blue-500/10 text-blue-400 border border-blue-400/30 
-           hover:bg-blue-500/20 hover:text-blue-300 hover:border-blue-300/50
-           transition-all duration-300 backdrop-blur-sm
-           px-6 py-3 rounded-lg font-semibold;
+  .btn-blood {
+    @apply bg-card border border-primary/30 text-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply hover:border-primary hover:text-primary transition-all duration-300;
   }
 
-  .btn-portal {
-    @apply bg-gradient-to-r from-purple-500/20 to-blue-500/20 text-white border border-purple-400/30 
-           hover:from-purple-400/30 hover:to-blue-400/30 hover:border-purple-300/50
-           transition-all duration-500 backdrop-blur-md
-           px-6 py-3 rounded-lg font-semibold;
-    box-shadow: 0 0 30px hsl(var(--cosmic-purple) / 0.4);
+  .btn-blood:hover {
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  /* Glow Effects */
-  .cosmic-glow {
-    box-shadow: var(--shadow-cosmic);
+  /* Crimson Glow Effects */
+  .crimson-glow {
+    box-shadow: var(--shadow-crimson);
   }
 
-  .stellar-glow {
-    box-shadow: var(--glow-stellar);
-  }
-
-  .portal-glow {
-    box-shadow: 0 0 40px hsl(var(--cosmic-purple) / 0.5), inset 0 0 20px hsl(var(--cosmic-blue) / 0.2);
+  .blood-glow {
+    box-shadow: var(--shadow-blood);
   }
 
   /* Text Gradients */
@@ -179,55 +167,26 @@
     background-clip: text;
   }
 
-  .text-cosmic-gradient {
-    @apply bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent;
-  }
-
-  .text-stellar-gradient {
-    @apply bg-gradient-to-r from-yellow-300 to-blue-400 bg-clip-text text-transparent;
-  }
-
-  /* Glass Effect */
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 
-           hover:bg-white/10 hover:border-white/20 transition-all duration-300;
-  }
-
-  /* Portal Effect */
-  .portal-container {
-    @apply relative rounded-full overflow-hidden;
-    background: radial-gradient(circle, hsl(var(--cosmic-blue) / 0.3), hsl(var(--cosmic-purple) / 0.2), transparent);
-    box-shadow: 
-      0 0 40px hsl(var(--cosmic-blue) / 0.4),
-      inset 0 0 30px hsl(var(--cosmic-purple) / 0.3),
-      0 0 80px hsl(var(--cosmic-purple) / 0.2);
-    animation: portal-pulse 3s ease-in-out infinite;
-  }
-
-  .portal-ring {
-    @apply absolute inset-0 rounded-full border-2;
-    border-color: hsl(var(--cosmic-blue) / 0.6);
-    animation: portal-rotate 8s linear infinite;
-  }
-
-  .portal-inner {
-    @apply absolute inset-2 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-600/20 backdrop-blur-sm;
+  .text-crimson-gradient {
+    background: var(--gradient-crimson);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   /* Project Cards */
   .project-card {
-    @apply bg-gradient-to-br from-slate-900/40 to-purple-900/20 border border-blue-400/20 
-           hover:border-blue-300/40 transition-all duration-300 backdrop-blur-md
-           hover:shadow-lg hover:shadow-blue-400/20
-           rounded-xl p-6;
+    @apply bg-card border border-border rounded-xl p-6;
+    @apply hover:border-primary/50 transition-all duration-500;
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--card)) 50%, hsl(var(--primary) / 0.05));
   }
 
   .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px hsl(var(--cosmic-blue) / 0.3);
+    box-shadow: 0 0 30px hsl(348 83% 47% / 0.3);
   }
 
-  /* Keyframes */
+  /* Glitch Animation */
   @keyframes glitch {
     0%, 100% { transform: translateX(0); }
     20% { transform: translateX(-2px); }
@@ -236,43 +195,17 @@
     80% { transform: translateX(1px); }
   }
 
-  @keyframes portal-pulse {
-    0%, 100% { 
-      box-shadow: 
-        0 0 40px hsl(var(--cosmic-blue) / 0.4),
-        inset 0 0 30px hsl(var(--cosmic-purple) / 0.3),
-        0 0 80px hsl(var(--cosmic-purple) / 0.2);
-    }
-    50% { 
-      box-shadow: 
-        0 0 60px hsl(var(--cosmic-blue) / 0.6),
-        inset 0 0 40px hsl(var(--cosmic-purple) / 0.5),
-        0 0 120px hsl(var(--cosmic-purple) / 0.3);
-    }
+  .glitch:hover {
+    animation: glitch 0.3s ease-in-out;
   }
 
-  @keyframes portal-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  /* Pulse Animation */
+  @keyframes pulse-crimson {
+    0%, 100% { box-shadow: 0 0 10px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @keyframes sparkle {
-    0%, 100% { opacity: 0; transform: scale(0); }
-    50% { opacity: 1; transform: scale(1); }
-  }
-
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out forwards;
-    opacity: 0;
+  .pulse-crimson {
+    animation: pulse-crimson 2s ease-in-out infinite;
   }
 }

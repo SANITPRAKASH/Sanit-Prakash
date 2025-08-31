@@ -19,13 +19,6 @@ export default {
 		},
 		extend: {
 			colors: {
-				"cosmic-blue": "hsl(var(--cosmic-blue))",
-				"cosmic-purple": "hsl(var(--cosmic-purple))",
-				"cosmic-gold": "hsl(var(--cosmic-gold))",
-				"cosmic-silver": "hsl(var(--cosmic-silver))",
-				"space-deep": "hsl(var(--space-deep))",
-				"space-medium": "hsl(var(--space-medium))",
-				"space-light": "hsl(var(--space-light))",
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -59,6 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				blood: {
+					DEFAULT: 'hsl(var(--blood))',
+					foreground: 'hsl(var(--blood-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -76,9 +73,9 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			boxShadow: {
-				'cosmic': 'var(--shadow-cosmic)',
-				'portal': 'var(--shadow-portal)',
-				'stellar': 'var(--glow-stellar)',
+				'crimson': '0 0 30px hsl(348 83% 47% / 0.3)',
+				'blood': '0 0 50px hsl(0 100% 27% / 0.2)',
+				'dark': '0 10px 30px hsl(0 0% 0% / 0.8)'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -96,30 +93,11 @@ export default {
 					to: {
 						height: '0'
 					}
-				},
-				'portal-pulse': {
-					'0%, 100%': {
-						boxShadow: '0 0 40px hsl(195 100% 50% / 0.4), inset 0 0 30px hsl(262 83% 58% / 0.3), 0 0 80px hsl(262 83% 58% / 0.2)'
-					},
-					'50%': {
-						boxShadow: '0 0 60px hsl(195 100% 50% / 0.6), inset 0 0 40px hsl(262 83% 58% / 0.5), 0 0 120px hsl(262 83% 58% / 0.3)'
-					}
-				},
-				'portal-rotate': {
-					from: { transform: 'rotate(0deg)' },
-					to: { transform: 'rotate(360deg)' }
-				},
-				'fade-in': {
-					from: { opacity: '0', transform: 'translateY(20px)' },
-					to: { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out',
-				'portal-pulse': 'portal-pulse 3s ease-in-out infinite',
-				'portal-rotate': 'portal-rotate 8s linear infinite',
-				'fade-in': 'fade-in 0.6s ease-out forwards'
+				'accordion-up': 'accordion-up 0.2s ease-out'
 			}
 		}
 	},
