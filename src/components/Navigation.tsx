@@ -87,7 +87,7 @@ const Navigation = () => {
               size="sm"
               className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs lg:text-sm transition-all duration-300 wakanda-glow-subtle"
               onClick={() => window.open(
-                "https://drive.google.com/uc?export=download&id=1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp",
+                "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
                 "_blank"
               )}
             >
@@ -133,7 +133,7 @@ const Navigation = () => {
                 className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs w-fit mt-3 mx-2"
                 onClick={() =>
               window.open(
-                "https://drive.google.com/uc?export=download&id=1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp",
+                "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
                 "_blank"
               )
             }

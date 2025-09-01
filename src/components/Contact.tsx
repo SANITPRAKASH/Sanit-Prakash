@@ -448,7 +448,7 @@ const Contact = () => {
                     className="w-full border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white py-3 transition-all duration-300 group"
                     onClick={() =>
                       window.open(
-                        "https://drive.google.com/uc?export=download&id=1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp",
+                        "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
                         "_blank"
                       )
                     }
