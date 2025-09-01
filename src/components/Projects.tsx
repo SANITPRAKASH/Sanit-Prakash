@@ -17,7 +17,7 @@ const Projects = () => {
       description: "AI-driven dynamic form builder with payment integration and clipboard-ready URLs. Automated form creation boosting efficiency by 40%.",
       tech: ["Next.js", "Prisma", "Supabase", "PostgreSQL", "Google Gemini AI", "Razorpay", "Docker"],
       github: "https://github.com/SANITPRAKASH/ai-form-generator",
-      live: "https://github.com/SANITPRAKASH",
+      live: "https://ai-form-generator-nu.vercel.app/",
       featured: true,
       status: "SaaS Production"
     },
@@ -28,7 +28,7 @@ const Projects = () => {
       description: "Modern social media platform with real-time features, socket connections, chat system, and live notifications.",
       tech: ["React", "Redux", "MongoDB", "Socket.IO", "GitHub Actions"],
       github: "https://github.com/SANITPRAKASH/Postify_socialmedia",
-      live: "#",
+      live: "https://postify-wyo1.onrender.com/",
       featured: true,
       status: "Real-time Platform"
     },
@@ -39,7 +39,7 @@ const Projects = () => {
       description: "TypeScript-based fitness tracking application with progress monitoring.",
       tech: ["TypeScript", "React Native", "Local Storage"],
       github: "https://github.com/SANITPRAKASH/FitnessTracker",
-      live: "#",
+      live: "https://fitness-tracker-henna.vercel.app/",
       featured: false,
       status: "Health & Fitness"
     },
@@ -49,10 +49,10 @@ const Projects = () => {
       category: "Full-Stack",
       description: "Boutique e-commerce store with glassmorphism UI and smooth user experience. Freelance project for local business.",
       tech: ["JavaScript", "Node.js", "Payment Gateway"],
-      github: "#",
-      live: "#",
+      github: "https://github.com/SANITPRAKASH/Pushkara_Expressions",
+      live: "",
       featured: false,
-      status: "Client Project"
+      status: "Client Project - Ongoing"
     },
     {
       id: 5,
@@ -61,7 +61,7 @@ const Projects = () => {
       description: "Complete ordering system with payment integration and delivery tracking workflow.",
       tech: ["JavaScript", "Node.js", "MongoDB"],
       github: "https://github.com/SANITPRAKASH/Food_order_and_del_app",
-      live: "#",
+      live: "https://food-order-and-del-appfront.onrender.com",
       featured: false,
       status: "Delivery Platform"
     },
@@ -76,7 +76,7 @@ const Projects = () => {
       description: "A simple and responsive video calling application.",
       tech: ["React", "Tailwind CSS", "ZegoCloud_api"],
       github: "https://github.com/SANITPRAKASH/Videoconference",
-      live: "#",
+      live: "https://videoconference-ib87.onrender.com/",
       featured: false,
       status: "Video Call App"
     },
@@ -87,7 +87,7 @@ const Projects = () => {
       description: "Responsive product landing page with smooth animations and modern design patterns.",
       tech: ["React", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/SANITPRAKASH/Nike_Front_sheet",
-      live: "#",
+      live: "https://sanitprakash.github.io/Nike_Front_sheet/",
       featured: false,
       status: "Landing Page"
     },
@@ -96,9 +96,9 @@ const Projects = () => {
       title: "Weather App",
       category: "Frontend",
       description: "Real-time weather application with API integration and location-based forecasts.",
-      tech: ["JavaScript", "Weather API", "CSS3"],
+      tech: ["React","JavaScript","HTML", "Weather API", "CSS3"],
       github: "https://github.com/SANITPRAKASH/WEATHER-APP",
-      live: "#",
+      live: "https://sanitprakash.github.io/WEATHER-APP/",
       featured: false,
       status: "Utility App"
     },
@@ -107,23 +107,26 @@ const Projects = () => {
       title: "Movie Search App",
       category: "Frontend",
       description: "OMDB API integration for movie searching with dynamic content rendering.",
-      tech: ["HTML", "CSS", "JavaScript", "OMDB API"],
+      tech: ["HTML", "CSS", "JavaScript", "React","OMDB API"],
       github: "https://github.com/SANITPRAKASH/Movie_SEARCH_APP",
-      live: "#",
+      live: "https://movie-search-app-uoit.onrender.com/",
       featured: false,
       status: "Entertainment"
     },
     {
       id: 10,
-      title: "Digital Clock & Stopwatch",
+      title: "To-do List app",
       category: "Frontend",
-      description: "Clean UI utility apps showcasing JavaScript timing functions and CSS animations.",
-      tech: ["JavaScript", "CSS3", "HTML5"],
-      github: "https://github.com/SANITPRAKASH/DigitalClock",
-      live: "#",
+      description: "The ToDo List App helps users manage their daily tasks by adding, removing, and marking them as complete",
+      tech: ["React","JavaScript", "CSS3", "HTML5"],
+      github: "https://github.com/SANITPRAKASH/to-do-list-app",
+      live: "https://sanitprakash.github.io/to-do-list-app/",
       featured: false,
       status: "Utility Tools"
     },
+ 
+    
+
 
     // Backend Projects
     {
@@ -133,7 +136,7 @@ const Projects = () => {
       description: "Social media backend with REST APIs, JWT authentication, and user management system.",
       tech: ["Java", "Spring Boot", "MySQL", "JWT"],
       github: "https://github.com/SANITPRAKASH/javasocial",
-      live: "#",
+      live: "",
       featured: false,
       status: "API Service"
     },
@@ -143,8 +146,8 @@ const Projects = () => {
       category: "Backend",
       description: "Spring Boot practice project with complete ecommerce backend functionality.",
       tech: ["Java", "Spring Boot", "MySQL", "REST APIs"],
-      github: "https://github.com/SANITPRAKASH/Ecommerce_Practice",
-      live: "#",
+      github: "https://github.com/SANITPRAKASH/MultivendorEcommerce",
+      live: "",
       featured: false,
       status: "Practice Project"
     },{
@@ -154,7 +157,7 @@ const Projects = () => {
       description: "Spring Boot practice project a robust backend for a food ordering system.",
       tech: ["Java", "Spring Boot", "MySQL", "REST APIs","JWT"],
       github: "https://github.com/SANITPRAKASH/Ruchi-Hub",
-      live: "#",
+      live: "",
       featured: false,
       status: "Practice Project"
     },
@@ -167,7 +170,7 @@ const Projects = () => {
       description: "Real estate mobile application built with React Native and TypeScript.",
       tech: ["React Native", "TypeScript", "Expo"],
       github: "https://github.com/SANITPRAKASH/React_Native_restate",
-      live: "https://github.com/SANITPRAKASH/React_Native_restate",
+      live: "",
       featured: false,
       status: "Real Estate App"
     },
@@ -181,7 +184,7 @@ const Projects = () => {
       description: "Machine learning project using NLP to detect fraudulent job postings and protect job seekers.",
       tech: ["Python", "Jupyter Notebook", "NLP", "Scikit-learn"],
       github: "https://github.com/SANITPRAKASH/fakejobpostdetection",
-      live: "https://github.com/SANITPRAKASH/fakejobpostdetection",
+      live: "",
       featured: false,
       status: "ML Research"
     }
@@ -245,11 +248,14 @@ const Projects = () => {
                       <Github className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 hover:text-purple-300" />
                     </a>
                   </Button>
-                  <Button size="sm" variant="ghost" className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-purple-500/10" asChild>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 hover:text-purple-300" />
-                    </a>
-                  </Button>
+                  {/* Only show live link button if project has a live URL */}
+                  {project.live && project.live.trim() !== "" && (
+                    <Button size="sm" variant="ghost" className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-purple-500/10" asChild>
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 hover:text-purple-300" />
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </div>
               
@@ -262,14 +268,14 @@ const Projects = () => {
               </p>
               
               <div className="flex flex-wrap gap-1 sm:gap-2">
-                {project.tech.slice(0, 3).map((tech) => (
+                {project.tech.slice(0, 10).map((tech) => (
                   <Badge key={tech} variant="secondary" className="text-xs bg-secondary/30 border-purple-500/10 text-gray-300">
                     {tech}
                   </Badge>
                 ))}
-                {project.tech.length > 3 && (
+                {project.tech.length > 10 && (
                   <Badge variant="secondary" className="text-xs bg-secondary/30 border-purple-500/10 text-gray-300">
-                    +{project.tech.length - 3}
+                    +{project.tech.length - 10}
                   </Badge>
                 )}
               </div>

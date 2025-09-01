@@ -119,7 +119,7 @@ const About = () => {
 
             {/* Wakandan Highlights */}
             <div className="project-card flex flex-col items-center wakanda-pattern">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Wakandan Network</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Networks</h3>
 
               <div className="flex gap-4 sm:gap-6">
                 <a
@@ -141,7 +141,7 @@ const About = () => {
                 </a>
 
                 <a
-                  href="https://leetcode.com/u/yashvvanth_1/"
+                  href="https://leetcode.com/u/Sanit_prakash/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 sm:p-4 rounded-full border border-purple-500/20 hover:border-purple-400/40 transition-all hover:bg-purple-500/10 transform hover:scale-110 duration-300"
@@ -179,7 +179,7 @@ const About = () => {
 
             {/* Achievements */}
             <div className="project-card">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Wakandan Achievements</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Achievements</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {achievements.map(({ icon: Icon, title, desc, link }) => (
                   <a
