@@ -93,8 +93,6 @@ const Hero = () => {
           </span>{" "}
           that make an impact"
         </p>
-
-       
       </div>
       {/* Stats Section - Fully Responsive */}
       <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
@@ -113,7 +111,7 @@ const Hero = () => {
                 32+
               </div>
               <div className="text-xs sm:text-sm md:text-base text-gray-400">
-                Repositories
+                Repos
               </div>
             </div>
             <div className="text-center">

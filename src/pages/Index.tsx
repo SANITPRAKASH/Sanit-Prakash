@@ -16,7 +16,7 @@ const Index = () => {
         <Experience />
         <Contact />
       </main>
-      
+
       {/* Wakandan Footer */}
       <footer className="py-6 md:py-8 px-4 md:px-6 border-t border-purple-500/20">
         <div className="max-w-4xl mx-auto text-center">

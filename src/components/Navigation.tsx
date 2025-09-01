@@ -11,17 +11,17 @@ const Navigation = () => {
     { id: "about", label: "About" },
     { id: "projects", label: "Arsenal" },
     { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" }
+    { id: "contact", label: "Contact" },
   ];
 
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.id);
+      const sections = navItems.map((item) => item.id);
       const scrollPos = window.scrollY + 100;
 
       for (const section of sections) {
@@ -29,7 +29,7 @@ const Navigation = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
             setActiveSection(section);
             break;
@@ -38,8 +38,8 @@ const Navigation = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -47,8 +47,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Wakandan Logo */}
-          <button 
-            onClick={() => scrollToSection('hero')}
+          <button
+            onClick={() => scrollToSection("hero")}
             className="font-bold text-lg sm:text-xl text-white hover:text-purple-400 transition-all duration-300 group"
           >
             <span className="text-purple-gradient bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-300 group-hover:to-purple-500 transition-all duration-300">
@@ -64,32 +64,36 @@ const Navigation = () => {
                 key={id}
                 onClick={() => scrollToSection(id)}
                 className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:text-purple-400 group ${
-                  activeSection === id 
-                    ? 'text-purple-400' 
-                    : 'text-gray-300'
+                  activeSection === id ? "text-purple-400" : "text-gray-300"
                 }`}
               >
                 {label}
                 {/* Wakandan active indicator */}
-                <div className={`absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-500 transition-all duration-300 ${
-                  activeSection === id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
-                }`}></div>
+                <div
+                  className={`absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-500 transition-all duration-300 ${
+                    activeSection === id
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-50"
+                  }`}
+                ></div>
                 {/* Wakandan glow effect */}
                 {activeSection === id && (
                   <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-400 blur-sm opacity-60"></div>
                 )}
               </button>
             ))}
-            
+
             {/* Wakandan Resume Button */}
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs lg:text-sm transition-all duration-300 wakanda-glow-subtle"
-              onClick={() => window.open(
-                "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
-                "_blank"
-              )}
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
+                  "_blank"
+                )
+              }
             >
               Resume
             </Button>
@@ -115,9 +119,9 @@ const Navigation = () => {
                   key={id}
                   onClick={() => scrollToSection(id)}
                   className={`text-left text-sm font-medium transition-all duration-300 hover:text-purple-400 px-2 py-1 rounded-md relative group ${
-                    activeSection === id 
-                      ? 'text-purple-400 bg-purple-500/10' 
-                      : 'text-gray-300 hover:bg-purple-500/5'
+                    activeSection === id
+                      ? "text-purple-400 bg-purple-500/10"
+                      : "text-gray-300 hover:bg-purple-500/5"
                   }`}
                 >
                   {label}
@@ -126,17 +130,17 @@ const Navigation = () => {
                   )}
                 </button>
               ))}
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 size="sm"
                 className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs w-fit mt-3 mx-2"
                 onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
-                "_blank"
-              )
-            }
+                  window.open(
+                    "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
+                    "_blank"
+                  )
+                }
               >
                 Resume
               </Button>

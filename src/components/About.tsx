@@ -1,5 +1,13 @@
 import { Badge } from "@/components/ui/badge";
-import { Code, Zap, Shield, Coffee, Album, FolderLock, ExternalLink } from "lucide-react";
+import {
+  Code,
+  Zap,
+  Shield,
+  Coffee,
+  Album,
+  FolderLock,
+  ExternalLink,
+} from "lucide-react";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
@@ -11,7 +19,7 @@ const About = () => {
       "Node.js",
       "Express",
       "REST APIs",
-      "WebSocket"
+      "WebSocket",
     ],
     "Frontend Technologies": [
       "React",
@@ -19,7 +27,7 @@ const About = () => {
       "Redux",
       "React Native",
       "Tailwind",
-      "TypeScript"
+      "TypeScript",
     ],
     "Cloud & DevOps": [
       "AWS",
@@ -65,7 +73,7 @@ const About = () => {
       title: "Goldman Sachs Software Engineering",
       desc: "Completed a governance analyst simulation",
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Goldman%20Sachs/NPdeQ43o8P9HJmJzg_Goldman%20Sachs_C48dhMqpSnLjBQbzo_1725665364062_completion_certificate.pdf",
-    }
+    },
   ];
 
   return (
@@ -82,43 +90,64 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left Column */}
           <div className="space-y-6 md:space-y-8">
-{/* Developer Profile */}
-<div className="project-card">
-  <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Developer Profile</h3>
-  
-  <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
-    I'm <span className="text-purple-400 font-semibold">Sanit Prakash</span>, 
-    an aspiring <span className="text-purple-400 font-semibold">Software Engineer</span> 
-    who loves building web + mobile apps. 
-    I work mainly with 
-    <span className="text-purple-400"> Java, Spring Boot, React Native, and TypeScript</span>, 
-    with a strong focus on 
-    <span className="text-purple-400 font-semibold">backend development</span> — 
-    designing secure <span className="text-purple-400">REST APIs</span>, 
-    managing <span className="text-purple-400">PostgreSQL/MongoDB</span>, 
-    and deploying on <span className="text-purple-400">AWS</span>.
-  </p>
+            {/* Developer Profile */}
+            <div className="project-card">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                Developer Profile
+              </h3>
 
-  <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
-    I’ve also explored <span className="text-purple-400">Docker, CI/CD, and AI-driven features</span> 
-    to speed up dev and ship faster. 
-    What excites me most is building <span className="text-purple-400">user-focused products</span> 
-    that solve real problems — especially in 
-    <span className="text-purple-400">social tech</span> and 
-    <span className="text-purple-400">healthcare</span>.
-  </p>
+              <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
+                I'm{" "}
+                <span className="text-purple-400 font-semibold">
+                  Sanit Prakash
+                </span>
+                , an aspiring{" "}
+                <span className="text-purple-400 font-semibold">
+                  Software Engineer
+                </span>
+                who loves building web + mobile apps. I work mainly with
+                <span className="text-purple-400">
+                  {" "}
+                  React, Next.js, Javascript, Spring Boot, java, React Native,
+                  and TypeScript
+                </span>
+                , with a strong focus on
+                <span className="text-purple-400 font-semibold">
+                  backend development
+                </span>{" "}
+                — designing secure{" "}
+                <span className="text-purple-400">REST APIs</span>, managing{" "}
+                <span className="text-purple-400">PostgreSQL/MongoDB</span>, and
+                deploying on <span className="text-purple-400">AWS</span>.
+              </p>
 
-  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-    My goal: create <span className="text-purple-gradient font-semibold">scalable, impactful software</span> 
-    that actually makes a difference.
-  </p>
-</div>
+              <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
+                I’ve also explored{" "}
+                <span className="text-purple-400">
+                  Docker, CI/CD, and AI-driven features
+                </span>
+                to speed up dev and ship faster. What excites me most is
+                building{" "}
+                <span className="text-purple-400">user-focused products</span>
+                that solve real problems — especially in
+                <span className="text-purple-400">social tech</span> and
+                <span className="text-purple-400">healthcare</span>.
+              </p>
 
-
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                My goal: create{" "}
+                <span className="text-purple-gradient font-semibold">
+                  scalable, impactful software
+                </span>
+                that actually makes a difference.
+              </p>
+            </div>
 
             {/* Wakandan Highlights */}
             <div className="project-card flex flex-col items-center wakanda-pattern">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Networks</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+                Networks
+              </h3>
 
               <div className="flex gap-4 sm:gap-6">
                 <a
@@ -155,11 +184,15 @@ const About = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Skills */}
             <div className="project-card">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Technical Arsenal</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+                Technical Arsenal
+              </h3>
               <div className="space-y-4 md:space-y-6">
                 {Object.entries(skills).map(([category, skillList]) => (
                   <div key={category}>
-                    <h4 className="text-purple-400 font-semibold text-sm mb-2 md:mb-3">{category}</h4>
+                    <h4 className="text-purple-400 font-semibold text-sm mb-2 md:mb-3">
+                      {category}
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {skillList.map((skill) => (
                         <Badge
@@ -178,7 +211,9 @@ const About = () => {
 
             {/* Achievements */}
             <div className="project-card">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">Achievements</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+                Achievements
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 {achievements.map(({ icon: Icon, title, desc, link }) => (
                   <a
