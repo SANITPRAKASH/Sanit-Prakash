@@ -94,39 +94,7 @@ const Hero = () => {
           that make an impact"
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
-          <Button
-            onClick={() => scrollToSection("projects")}
-            className="w-full sm:w-auto bg-purple-600 hover:bg-purple-700 text-white px-4 md:px-6 py-2 md:py-3 transform hover:scale-105 transition-all duration-200 wakanda-glow"
-          >
-            <ExternalLink className="w-4 h-4 mr-2" />
-            View My Work
-          </Button>
-
-          <Button
-            variant="outline"
-            className="w-full sm:w-auto border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-4 md:px-6 py-2 md:py-3 transform hover:scale-105 transition-all duration-200"
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/uc?export=download&id=1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp",
-                "_blank"
-              )
-            }
-          >
-            <FileText className="w-4 h-4 mr-2" />
-            Download Resume
-          </Button>
-
-          <Button
-            variant="ghost"
-            className="w-full sm:w-auto text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transform hover:scale-105 transition-all duration-200"
-            onClick={() => scrollToSection("contact")}
-          >
-            <Mail className="w-4 h-4 mr-2" />
-            Connect
-          </Button>
-        </div>
+       
       </div>
       {/* Stats Section - Fully Responsive */}
       <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
