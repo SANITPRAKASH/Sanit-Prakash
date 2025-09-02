@@ -90,7 +90,7 @@ const Navigation = () => {
               className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs lg:text-sm transition-all duration-300 wakanda-glow-subtle"
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
+                  "https://drive.google.com/file/d/1_3L-XdF4DeXC3HhIl2vcUA37dt5BdoP0/view?usp=sharing",
                   "_blank"
                 )
               }
