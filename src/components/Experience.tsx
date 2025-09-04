@@ -80,7 +80,7 @@ const Experience = () => {
               <div className="ml-12 sm:ml-16 project-card w-full">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-2">
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-black mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-500 mb-2">
                       {exp.title}
                     </h3>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
@@ -112,7 +112,7 @@ const Experience = () => {
 
                 {/* Achievements */}
                 <div className="mb-4">
-                  <h4 className="text-white font-semibold mb-3 text-sm sm:text-base">
+                  <h4 className="text-gray-500 font-semibold mb-3 text-sm sm:text-base">
                     Key Achievements:
                   </h4>
                   <ul className="space-y-2">

@@ -260,7 +260,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="vibranium-card group wakanda-pattern relative overflow-hidden"
+              className="project-card vibranium-card group wakanda-pattern relative overflow-hidden"
             >
               <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
                 <div className="flex flex-wrap gap-2">
