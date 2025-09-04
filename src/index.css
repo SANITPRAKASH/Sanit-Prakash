@@ -2,27 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Black Panther Wakandan Design System - Purple & Black Theme */
+/* Wakanda Portfolio - Dual Theme System */
 
 @layer base {
   :root {
-    /* Core Theme Colors */
-    --background: 0 0% 0%; /* Pure black */
-    --foreground: 0 0% 100%; /* Pure white */
+    /* Light Mode - White & Purple Theme */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 0 0% 10%; /* Dark text */
 
-    /* Card System */
-    --card: 0 0% 7.3%; /* Dark charcoal */
-    --card-foreground: 0 0% 100%;
+    /* Card System - Light */
+    --card: 0 0% 98%; /* Very light gray */
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    /* Wakandan Purple System */
+    /* Wakandan Purple System (unchanged) */
     --primary: 280 100% 70%; /* Vibrant Wakandan purple */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%; /* Steel gray */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%; /* Light gray */
+    --secondary-foreground: 0 0% 10%;
 
     /* Purple Variants */
     --wakanda: 270 91% 65%; /* Royal Wakandan purple */
@@ -31,9 +31,9 @@
     --wakanda-glow: 280 100% 70%;
     --wakanda-dark: 270 91% 35%;
 
-    /* Muted System */
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 63.9%;
+    /* Muted System - Light */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 280 100% 70%;
     --accent-foreground: 0 0% 100%;
@@ -41,22 +41,22 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Interface Elements */
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    /* Interface Elements - Light */
+    --border: 0 0% 88%;
+    --input: 0 0% 96%;
     --ring: 280 100% 70%;
 
     --radius: 0.75rem;
 
-    /* Custom Gradients */
-    --gradient-wakanda: linear-gradient(135deg, hsl(0 0% 0%), hsl(280 100% 70% / 0.1), hsl(0 0% 0%));
+    /* Custom Gradients - Light Mode */
+    --gradient-wakanda: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 100% 70% / 0.05), hsl(0 0% 100%));
     --gradient-purple: linear-gradient(135deg, hsl(280 100% 70%), hsl(270 91% 65%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 100% 70%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 15%), hsl(280 100% 70%));
     
-    /* Shadows & Glows */
-    --shadow-wakanda: 0 0 30px hsl(280 100% 70% / 0.3);
-    --shadow-purple: 0 0 50px hsl(270 91% 65% / 0.2);
-    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.8);
+    /* Shadows & Glows - Light Mode */
+    --shadow-wakanda: 0 0 30px hsl(280 100% 70% / 0.15);
+    --shadow-purple: 0 0 50px hsl(270 91% 65% / 0.1);
+    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.1);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,33 +73,56 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Black & Purple Theme (Your original) */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* Pure white */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Card System - Dark */
+    --card: 0 0% 7.3%; /* Dark charcoal */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Wakandan Purple System (unchanged) */
+    --primary: 280 100% 70%; /* Vibrant Wakandan purple */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 18%; /* Steel gray */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Purple Variants */
+    --wakanda: 270 91% 65%; /* Royal Wakandan purple */
+    --wakanda-foreground: 0 0% 100%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --wakanda-glow: 280 100% 70%;
+    --wakanda-dark: 270 91% 35%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted System - Dark */
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 63.9%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --accent: 280 100% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Interface Elements - Dark */
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 280 100% 70%;
+
+    /* Custom Gradients - Dark Mode */
+    --gradient-wakanda: linear-gradient(135deg, hsl(0 0% 0%), hsl(280 100% 70% / 0.1), hsl(0 0% 0%));
+    --gradient-purple: linear-gradient(135deg, hsl(280 100% 70%), hsl(270 91% 65%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 100% 70%));
+    
+    /* Shadows & Glows - Dark Mode */
+    --shadow-wakanda: 0 0 30px hsl(280 100% 70% / 0.3);
+    --shadow-purple: 0 0 50px hsl(270 91% 65% / 0.2);
+    --shadow-dark: 0 10px 30px hsl(0 0% 0% / 0.8);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -120,18 +143,20 @@
     @apply bg-background text-foreground font-mono;
     background: var(--gradient-wakanda);
     background-attachment: fixed;
+    transition: var(--transition-smooth);
   }
 }
 
 @layer components {
   /* Wakandan Warrior Button Variants */
   .btn-warrior {
-    @apply bg-gradient-to-r from-primary to-wakanda text-primary-foreground px-6 py-3 rounded-lg font-semibold;
+    @apply text-primary-foreground px-6 py-3 rounded-lg font-semibold;
     @apply transition-all duration-300 hover:scale-105 border border-primary/20;
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--wakanda)));
   }
 
   .btn-warrior:hover {
-    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
+    box-shadow: var(--shadow-wakanda);
   }
 
   .btn-wakanda {
@@ -140,7 +165,7 @@
   }
 
   .btn-wakanda:hover {
-    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
+    box-shadow: var(--shadow-wakanda);
   }
 
   /* Wakandan Glow Effects */
@@ -167,6 +192,35 @@
     background-clip: text;
   }
 
+  /* Custom Gradient Utilities */
+  .bg-gradient-primary-wakanda {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--wakanda)));
+  }
+
+  .bg-gradient-wakanda-primary {
+    background: linear-gradient(to right, hsl(var(--wakanda)), hsl(var(--primary)));
+  }
+
+  .from-primary {
+    --tw-gradient-from: hsl(var(--primary)) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsl(var(--primary) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .to-wakanda {
+    --tw-gradient-to: hsl(var(--wakanda)) var(--tw-gradient-to-position);
+  }
+
+  .from-wakanda {
+    --tw-gradient-from: hsl(var(--wakanda)) var(--tw-gradient-from-position);
+    --tw-gradient-to: hsl(var(--wakanda) / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .to-primary {
+    --tw-gradient-to: hsl(var(--primary)) var(--tw-gradient-to-position);
+  }
+
   /* Project Cards */
   .project-card {
     @apply bg-card border border-border rounded-xl p-6;
@@ -176,7 +230,7 @@
 
   .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px hsl(280 100% 70% / 0.3);
+    box-shadow: var(--shadow-wakanda);
   }
 
   /* Glitch Animation */
@@ -209,6 +263,13 @@
       radial-gradient(circle at 75% 75%, hsl(270 91% 65% / 0.1) 0%, transparent 50%);
   }
 
+  /* Light mode specific pattern */
+  .light .wakanda-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(280 100% 70% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(270 91% 65% / 0.05) 0%, transparent 50%);
+  }
+
   /* Vibranium Shimmer Effect */
   @keyframes vibranium-shimmer {
     0% { background-position: -200% 0; }
@@ -224,5 +285,33 @@
     );
     background-size: 200% 100%;
     animation: vibranium-shimmer 3s ease-in-out infinite;
+  }
+
+  /* Light mode shimmer adjustment */
+  .light .vibranium-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(280 100% 70% / 0.1),
+      transparent
+    );
+  }
+
+  /* Additional light mode specific styles */
+  .light .text-gray-400 {
+    @apply text-gray-600;
+  }
+
+  .light .text-gray-300 {
+    @apply text-gray-700;
+  }
+
+  .light .bg-black {
+    @apply bg-white;
+  }
+
+  /* Theme transition for smooth switching */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 }

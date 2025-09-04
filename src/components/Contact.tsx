@@ -51,25 +51,25 @@ const Contact = () => {
       label: "Response Time",
       value: "< 24hrs",
       icon: Clock,
-      color: "text-purple-400",
+      color: "text-primary",
     },
     {
       label: "Location-Bengaluru",
       value: "Remote Ready",
       icon: MapPin,
-      color: "text-purple-500",
+      color: "text-wakanda",
     },
     {
       label: "Availability",
       value: "Full-Time",
       icon: User,
-      color: "text-purple-400",
+      color: "text-primary",
     },
     {
       label: "Time Zone",
       value: "IST (UTC+5:30)",
       icon: Globe,
-      color: "text-purple-500",
+      color: "text-wakanda",
     },
   ];
 
@@ -83,14 +83,14 @@ const Contact = () => {
           "mailto:sanitprakash@outlook.com?subject=Let's build something amazing together&body=Hi Sanit,\n\nI'd like to discuss...",
           "_blank"
         ),
-      gradient: "from-purple-500 to-purple-700",
+      gradient: "from-primary to-wakanda",
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+91 8050405797",
       action: () => window.open("tel:+918050405797"),
-      gradient: "from-purple-600 to-purple-800",
+      gradient: "from-wakanda to-primary",
     },
     {
       icon: MapPin,
@@ -101,31 +101,31 @@ const Contact = () => {
           "https://www.google.com/maps/place/Basaweshwara+Nagar,+Bengaluru,+Karnataka",
           "_blank"
         ),
-      gradient: "from-purple-500 to-purple-600",
+      gradient: "from-primary to-wakanda",
     },
     {
       icon: Linkedin,
-      title: "Linkdin",
+      title: "LinkedIn",
       value: "linkedin.com/in/sanitprakash",
       action: () =>
         window.open("https://www.linkedin.com/in/sanit-prakash/", "_blank"),
-      gradient: "from-purple-600 to-purple-700",
+      gradient: "from-wakanda to-primary",
     },
   ];
 
   return (
     <section
       id="contact"
-      className="py-16 md:py-20 px-4 sm:px-6 bg-black min-h-screen relative"
+      className="py-16 md:py-20 px-4 sm:px-6 bg-background min-h-screen relative"
     >
       {/* Wakandan Energy Grid Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none wakanda-pattern">
         <div
           className="w-full h-full"
           style={{
             backgroundImage: `
-            radial-gradient(circle at 25% 25%, rgba(139, 69, 255, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.2) 0%, transparent 50%)
+            radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, hsl(var(--wakanda) / 0.1) 0%, transparent 50%)
           `,
             backgroundSize: "100px 100px",
           }}
@@ -135,30 +135,30 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Let's <span className="text-purple-gradient">Build Together</span>
           </h2>
-          <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto mb-6 md:mb-8 px-4">
+          <p className="text-muted-foreground text-base md:text-lg max-w-3xl mx-auto mb-6 md:mb-8 px-4">
             Ready to create something amazing together? Drop me a message and
             let's build applications that make an impact.
           </p>
-          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-700 mx-auto"></div>
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-wakanda mx-auto"></div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
           {/* Contact Form - Enhanced */}
           <div className="lg:col-span-2 space-y-6">
             <div className="project-card wakanda-pattern">
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+                <MessageSquare className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 Send Message
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white flex items-center gap-2">
-                      <User className="w-4 h-4 text-purple-400" />
+                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <User className="w-4 h-4 text-primary" />
                       Full Name *
                     </label>
                     <input
@@ -166,13 +166,13 @@ const Contact = () => {
                       type="text"
                       placeholder="Enter your full name"
                       required
-                      className="w-full p-3 md:p-4 rounded-lg bg-background/50 border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full p-3 md:p-4 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-white flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-purple-400" />
+                    <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-primary" />
                       Email Address *
                     </label>
                     <input
@@ -180,27 +180,27 @@ const Contact = () => {
                       type="email"
                       placeholder="your.email@example.com"
                       required
-                      className="w-full p-3 md:p-4 rounded-lg bg-background/50 border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                      className="w-full p-3 md:p-4 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-white flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-purple-400" />
+                  <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <Zap className="w-4 h-4 text-primary" />
                     Subject
                   </label>
                   <input
                     name="entry.1087425657"
                     type="text"
                     placeholder="What's this about?"
-                    className="w-full p-3 md:p-4 rounded-lg bg-background/50 border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                    className="w-full p-3 md:p-4 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-white flex items-center gap-2">
-                    <MessageSquare className="w-4 h-4 text-purple-400" />
+                  <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <MessageSquare className="w-4 h-4 text-primary" />
                     Message *
                   </label>
                   <textarea
@@ -208,18 +208,18 @@ const Contact = () => {
                     placeholder="Tell me about your project, ideas, or just say hi! I'd love to hear from you..."
                     rows={5}
                     required
-                    className="w-full p-3 md:p-4 rounded-lg bg-background/50 border border-purple-500/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all resize-none"
+                    className="w-full p-3 md:p-4 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-none"
                   ></textarea>
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-3 md:py-4 text-base md:text-lg transition-all duration-300 disabled:opacity-50 shadow-lg hover:shadow-purple-500/25"
+                  className="btn-warrior w-full py-3 md:py-4 text-base md:text-lg transition-all duration-300 disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3"></div>
+                      <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin mr-3"></div>
                       Sending...
                     </>
                   ) : (
@@ -235,17 +235,18 @@ const Contact = () => {
                 <div
                   className={`mt-4 md:mt-6 p-3 md:p-4 rounded-lg text-center font-medium text-sm md:text-base transition-all ${
                     status.includes("successfully")
-                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : "bg-red-500/20 text-red-400 border border-red-500/30"
+                      ? "bg-green-500/20 text-green-600 dark:text-green-400 border border-green-500/30"
+                      : "bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/30"
                   }`}
                 >
                   {status}
                 </div>
               )}
             </div>
+
             {/* Quick Connect CTA - Wakandan Style */}
-            <div className="project-card text-center flex flex-col items-center gap-4 wakanda-pattern bg-gradient-to-br from-purple-900/20 to-black border-purple-500/30 p-6 md:p-8">
-              <h4 className="text-xl md:text-2xl font-bold text-white mb-2">
+            <div className="project-card text-center flex flex-col items-center gap-4 wakanda-pattern bg-gradient-to-br from-primary/10 to-wakanda/5 border-primary/30 p-6 md:p-8">
+              <h4 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                 Quick Connect
               </h4>
               <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-sm">
@@ -255,7 +256,7 @@ const Contact = () => {
               {/* Contact Buttons Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
                 <Button
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+                  className="btn-warrior w-full py-3 px-4 transition-all duration-300 hover:scale-105 active:scale-95"
                   onClick={() =>
                     window.open(
                       "mailto:sanitprakash@outlook.com?subject=Let's build something amazing together&body=Hi Sanit,\n\nI'd like to discuss...",
@@ -268,7 +269,7 @@ const Contact = () => {
                 </Button>
 
                 <Button
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+                  className="btn-warrior w-full py-3 px-4 transition-all duration-300 hover:scale-105 active:scale-95"
                   onClick={() => window.open("tel:+918050405797", "_blank")}
                 >
                   <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
@@ -276,7 +277,7 @@ const Contact = () => {
                 </Button>
 
                 <Button
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+                  className="btn-warrior w-full py-3 px-4 transition-all duration-300 hover:scale-105 active:scale-95"
                   onClick={() =>
                     window.open(
                       "https://www.google.com/maps/place/Basaweshwara+Nagar,+Bengaluru,+Karnataka",
@@ -289,7 +290,7 @@ const Contact = () => {
                 </Button>
 
                 <Button
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover:scale-105 active:scale-95"
+                  className="btn-warrior w-full py-3 px-4 transition-all duration-300 hover:scale-105 active:scale-95"
                   onClick={() =>
                     window.open(
                       "https://www.linkedin.com/in/sanit-prakash/",
@@ -304,7 +305,7 @@ const Contact = () => {
 
               {/* Mobile-first stacked layout fallback */}
               <div className="sm:hidden flex flex-col gap-3 w-full max-w-xs mt-4">
-                <div className="text-xs text-purple-300/70 text-center">
+                <div className="text-xs text-primary/70 text-center">
                   📱 Tap any button above to connect
                 </div>
               </div>
@@ -314,7 +315,7 @@ const Contact = () => {
                 {[...Array(6)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-1 h-1 bg-purple-400/40 rounded-full animate-ping"
+                    className="absolute w-1 h-1 bg-primary/40 rounded-full animate-ping"
                     style={{
                       top: `${15 + Math.sin((i * Math.PI) / 3) * 35}%`,
                       left: `${15 + Math.cos((i * Math.PI) / 3) * 35}%`,
@@ -331,17 +332,17 @@ const Contact = () => {
           <div className="space-y-6">
             {/* Current Status */}
             <div className="project-card wakanda-pattern">
-              <h3 className="text-lg md:text-xl font-bold text-white mb-6 text-center">
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-6 text-center">
                 Current Status
               </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-3 md:p-4 bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-lg border border-green-500/30">
-                  <span className="text-white font-medium text-sm md:text-base flex items-center gap-2">
+                  <span className="text-foreground font-medium text-sm md:text-base flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     Availability
                   </span>
-                  <Badge className="bg-green-500/20 text-green-400 border-green-500/40 text-xs md:text-sm">
+                  <Badge className="bg-green-500/20 text-green-600 dark:text-green-400 border-green-500/40 text-xs md:text-sm">
                     Available
                   </Badge>
                 </div>
@@ -350,15 +351,15 @@ const Contact = () => {
                   {quickStats.map(({ label, value, icon: Icon, color }) => (
                     <div
                       key={label}
-                      className="text-center p-3 border border-purple-500/20 rounded-lg hover:border-purple-400/40 transition-all hover:bg-purple-500/5 group"
+                      className="text-center p-3 border border-border rounded-lg hover:border-primary/40 transition-all hover:bg-primary/5 group"
                     >
                       <Icon
-                        className={`w-4 h-4 mx-auto mb-2 ${color} group-hover:text-purple-300 transition-colors`}
+                        className={`w-4 h-4 mx-auto mb-2 ${color} group-hover:text-primary transition-colors`}
                       />
-                      <div className="text-purple-400 font-semibold text-xs md:text-sm">
+                      <div className="text-primary font-semibold text-xs md:text-sm">
                         {value}
                       </div>
-                      <div className="text-gray-500 text-xs">{label}</div>
+                      <div className="text-muted-foreground text-xs">{label}</div>
                     </div>
                   ))}
                 </div>
@@ -367,47 +368,47 @@ const Contact = () => {
 
             {/* What I'm Looking For */}
             <div className="project-card">
-              <h3 className="text-lg font-bold text-white mb-6 text-center">
+              <h3 className="text-lg font-bold text-foreground mb-6 text-center">
                 What I'm Looking For
               </h3>
               <div className="space-y-3">
-                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-purple-500/10 to-purple-600/10 border border-purple-500/20 hover:border-purple-400/30 transition-all">
-                  <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
+                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-primary/10 to-wakanda/10 border border-primary/20 hover:border-primary/30 transition-all">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 animate-pulse"></div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">
+                    <h4 className="text-foreground text-sm font-semibold mb-1">
                       Software & Full-Stack Roles
                     </h4>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-muted-foreground text-xs">
                       React, Node.js, Spring Boot
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-purple-600/10 to-purple-700/10 border border-purple-500/20 hover:border-purple-400/30 transition-all">
+                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-wakanda/10 to-primary/10 border border-primary/20 hover:border-primary/30 transition-all">
                   <div
-                    className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0 animate-pulse"
+                    className="w-2 h-2 bg-wakanda rounded-full mt-2 flex-shrink-0 animate-pulse"
                     style={{ animationDelay: "0.5s" }}
                   ></div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">
+                    <h4 className="text-foreground text-sm font-semibold mb-1">
                       AI & SaaS Projects
                     </h4>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-muted-foreground text-xs">
                       ML integration, Automation
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-purple-700/10 to-purple-800/10 border border-purple-500/20 hover:border-purple-400/30 transition-all">
+                <div className="flex items-start gap-3 p-3 md:p-4 rounded-lg bg-gradient-to-r from-primary/10 to-wakanda/10 border border-primary/20 hover:border-primary/30 transition-all">
                   <div
-                    className="w-2 h-2 bg-purple-600 rounded-full mt-2 flex-shrink-0 animate-pulse"
+                    className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 animate-pulse"
                     style={{ animationDelay: "1s" }}
                   ></div>
                   <div>
-                    <h4 className="text-white text-sm font-semibold mb-1">
+                    <h4 className="text-foreground text-sm font-semibold mb-1">
                       Collaborative Teams
                     </h4>
-                    <p className="text-gray-400 text-xs">
+                    <p className="text-muted-foreground text-xs">
                       Agile, Growth, Impact
                     </p>
                   </div>
@@ -416,14 +417,14 @@ const Contact = () => {
             </div>
 
             {/* Wakandan Tech CTA */}
-            <div className="project-card text-center bg-gradient-to-br from-purple-900/20 to-black border-purple-500/30">
+            <div className="project-card text-center bg-gradient-to-br from-primary/20 to-wakanda/10 border-primary/30">
               <div className="relative">
                 {/* Energy particles around the CTA */}
                 <div className="absolute inset-0 pointer-events-none">
                   {[...Array(6)].map((_, i) => (
                     <div
                       key={i}
-                      className="absolute w-1 h-1 bg-purple-400/60 rounded-full animate-ping"
+                      className="absolute w-1 h-1 bg-primary/60 rounded-full animate-ping"
                       style={{
                         top: `${20 + Math.sin((i * Math.PI) / 3) * 30}%`,
                         left: `${20 + Math.cos((i * Math.PI) / 3) * 60}%`,
@@ -434,18 +435,17 @@ const Contact = () => {
                   ))}
                 </div>
 
-                <Zap className="w-8 h-8 md:w-12 md:h-12 text-purple-400 mx-auto mb-4 animate-pulse" />
-                <h4 className="text-lg md:text-xl font-bold text-white mb-3">
+                <Zap className="w-8 h-8 md:w-12 md:h-12 text-primary mx-auto mb-4 animate-pulse" />
+                <h4 className="text-lg md:text-xl font-bold text-foreground mb-3">
                   Ready to Innovate?
                 </h4>
-                <p className="text-gray-400 text-sm md:text-base mb-6">
+                <p className="text-muted-foreground text-sm md:text-base mb-6">
                   Let's harness technology to build something extraordinary
                 </p>
 
                 <div className="space-y-3">
                   <Button
-                    variant="outline"
-                    className="w-full border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white py-3 transition-all duration-300 group"
+                    className="btn-wakanda w-full py-3 transition-all duration-300 group"
                     onClick={() =>
                       window.open(
                         "https://drive.google.com/file/d/1_3L-XdF4DeXC3HhIl2vcUA37dt5BdoP0/view?usp=sharing",
@@ -468,7 +468,7 @@ const Contact = () => {
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-purple-500/20 rounded-full animate-ping"
+            className="absolute w-2 h-2 bg-primary/20 rounded-full animate-ping"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,

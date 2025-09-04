@@ -236,7 +236,7 @@ const Projects = () => {
           <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-600 mx-auto"></div>
         </div>
 
-        {/* Category Filter - Fully Responsive */}
+        {/* Category Filter - Enhanced Vibranium Style */}
         <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 px-4">
           {categories.map((category) => (
             <Button
@@ -246,8 +246,8 @@ const Projects = () => {
               onClick={() => setActiveCategory(category)}
               className={`text-xs sm:text-sm transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-purple-600 hover:bg-purple-700 text-white border-purple-500 wakanda-glow"
-                  : "border-purple-500/30 text-purple-400 hover:border-purple-400/50 hover:bg-purple-500/10"
+                  ? "btn-vibranium bg-gradient-to-r from-primary to-wakanda text-primary-foreground wakanda-glow"
+                  : "btn-wakanda border-primary/30 hover:border-primary/50"
               }`}
             >
               {category}
@@ -255,24 +255,24 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* All Projects Grid - Responsive */}
+        {/* All Projects Grid - Enhanced Vibranium Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="project-card group wakanda-pattern"
+              className="vibranium-card group wakanda-pattern relative overflow-hidden"
             >
               <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
                 <div className="flex flex-wrap gap-2">
                   <Badge
                     variant="outline"
-                    className="border-purple-500/30 text-purple-400 text-xs"
+                    className="border-primary/30 text-primary text-xs bg-primary/5"
                   >
                     {project.category}
                   </Badge>
                   <Badge
                     variant="secondary"
-                    className="text-xs bg-secondary/20 text-gray-300"
+                    className="text-xs bg-silver-accent text-foreground"
                   >
                     {project.status}
                   </Badge>
@@ -281,7 +281,7 @@ const Projects = () => {
                   <Button
                     size="sm"
                     variant="ghost"
-                    className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-purple-500/10"
+                    className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-primary/10 metallic-glow"
                     asChild
                   >
                     <a
@@ -289,7 +289,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 hover:text-purple-300" />
+                      <Github className="w-3 h-3 sm:w-4 sm:h-4 text-primary hover:text-primary/80" />
                     </a>
                   </Button>
                   {/* Only show live link button if project has a live URL */}
@@ -297,7 +297,7 @@ const Projects = () => {
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-purple-500/10"
+                      className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-primary/10 metallic-glow"
                       asChild
                     >
                       <a
@@ -305,14 +305,14 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 hover:text-purple-300" />
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-primary hover:text-primary/80" />
                       </a>
                     </Button>
                   )}
                 </div>
               </div>
 
-              <h4 className="text-base sm:text-lg font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+              <h4 className="text-base sm:text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {project.title}
               </h4>
 
@@ -325,7 +325,7 @@ const Projects = () => {
                   <Badge
                     key={tech}
                     variant="secondary"
-                    className="text-xs bg-secondary/30 border-purple-500/10 text-gray-300"
+                    className="text-xs bg-vibranium border-border/50 text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {tech}
                   </Badge>
@@ -333,15 +333,20 @@ const Projects = () => {
                 {project.tech.length > 10 && (
                   <Badge
                     variant="secondary"
-                    className="text-xs bg-secondary/30 border-purple-500/10 text-gray-300"
+                    className="text-xs bg-vibranium border-border/50 text-muted-foreground"
                   >
                     +{project.tech.length - 10}
                   </Badge>
                 )}
               </div>
 
-              {/* Wakandan Energy Effect on Hover */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500/0 to-purple-500/0 group-hover:from-purple-500/5 group-hover:to-purple-600/5 transition-all duration-500 pointer-events-none"></div>
+              {/* Enhanced Wakandan Energy Effect on Hover */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-wakanda/5 transition-all duration-500 pointer-events-none"></div>
+              
+              {/* Vibranium shimmer effect */}
+              <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
+                <div className="absolute inset-0 vibranium-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
             </div>
           ))}
         </div>
@@ -349,10 +354,12 @@ const Projects = () => {
         {/* Show message if no projects match filter */}
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <Zap className="w-12 h-12 text-purple-400/50 mx-auto mb-4" />
-            <p className="text-muted-foreground">
-              No projects found in this category.
-            </p>
+            <div className="vibranium-card inline-block">
+              <Zap className="w-12 h-12 text-primary/50 mx-auto mb-4 metallic-pulse" />
+              <p className="text-muted-foreground">
+                No projects found in this category.
+              </p>
+            </div>
           </div>
         )}
       </div>

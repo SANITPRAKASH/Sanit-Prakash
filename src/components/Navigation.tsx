@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,13 +44,13 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-purple-500/20 wakanda-pattern">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-purple-500/20 wakanda-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Wakandan Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="font-bold text-lg sm:text-xl text-white hover:text-purple-400 transition-all duration-300 group"
+            className="font-bold text-lg sm:text-xl text-foreground hover:text-purple-400 transition-all duration-300 group"
           >
             <span className="text-purple-gradient bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-300 group-hover:to-purple-500 transition-all duration-300">
               SP
@@ -58,13 +59,13 @@ const Navigation = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
             {navItems.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => scrollToSection(id)}
                 className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:text-purple-400 group ${
-                  activeSection === id ? "text-purple-400" : "text-gray-300"
+                  activeSection === id ? "text-purple-400" : "text-muted-foreground"
                 }`}
               >
                 {label}
@@ -82,6 +83,9 @@ const Navigation = () => {
                 )}
               </button>
             ))}
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
 
             {/* Wakandan Resume Button */}
             <Button
@@ -112,7 +116,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation with Wakandan styling */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-purple-500/20 bg-black/95 backdrop-blur-md">
+          <div className="md:hidden py-4 border-t border-purple-500/20 bg-background/95 backdrop-blur-md">
             <div className="flex flex-col space-y-3">
               {navItems.map(({ id, label }) => (
                 <button
@@ -121,7 +125,7 @@ const Navigation = () => {
                   className={`text-left text-sm font-medium transition-all duration-300 hover:text-purple-400 px-2 py-1 rounded-md relative group ${
                     activeSection === id
                       ? "text-purple-400 bg-purple-500/10"
-                      : "text-gray-300 hover:bg-purple-500/5"
+                      : "text-muted-foreground hover:bg-purple-500/5"
                   }`}
                 >
                   {label}
@@ -130,6 +134,12 @@ const Navigation = () => {
                   )}
                 </button>
               ))}
+
+              {/* Mobile Theme Toggle */}
+              <div className="flex items-center justify-between px-2 py-1">
+                <span className="text-sm font-medium text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
 
               <Button
                 variant="outline"

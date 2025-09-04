@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       <Navigation />
       <main>
         <Hero />
@@ -20,7 +20,7 @@ const Index = () => {
       {/* Wakandan Footer */}
       <footer className="py-6 md:py-8 px-4 md:px-6 border-t border-purple-500/20">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             © 2025 Sanit Prakash. Built with React, TypeScript & Wakandan Tech.
           </p>
           <p className="text-xs text-purple-400 mt-2 font-mono">

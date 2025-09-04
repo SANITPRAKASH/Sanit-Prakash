@@ -77,7 +77,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
+    <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -92,7 +92,7 @@ const About = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Developer Profile */}
             <div className="project-card">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-4">
                 Developer Profile
               </h3>
 
@@ -122,7 +122,7 @@ const About = () => {
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-4 text-sm sm:text-base">
-                I’ve also explored{" "}
+                I've also explored{" "}
                 <span className="text-purple-400">
                   Docker, CI/CD, and AI-driven features
                 </span>
@@ -145,7 +145,7 @@ const About = () => {
 
             {/* Wakandan Highlights */}
             <div className="project-card flex flex-col items-center wakanda-pattern">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-6">
                 Networks
               </h3>
 
@@ -156,7 +156,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="p-3 sm:p-4 rounded-full border border-purple-500/20 hover:border-purple-400/40 transition-all hover:bg-purple-500/10 transform hover:scale-110 duration-300"
                 >
-                  <FaLinkedin className="text-xl sm:text-2xl text-gray-400 hover:text-purple-400 transition-colors" />
+                  <FaLinkedin className="text-xl sm:text-2xl text-muted-foreground hover:text-purple-400 transition-colors" />
                 </a>
 
                 <a
@@ -165,7 +165,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="p-3 sm:p-4 rounded-full border border-purple-500/20 hover:border-purple-400/40 transition-all hover:bg-purple-500/10 transform hover:scale-110 duration-300"
                 >
-                  <FaGithub className="text-xl sm:text-2xl text-gray-400 hover:text-purple-400 transition-colors" />
+                  <FaGithub className="text-xl sm:text-2xl text-muted-foreground hover:text-purple-400 transition-colors" />
                 </a>
 
                 <a
@@ -174,7 +174,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="p-3 sm:p-4 rounded-full border border-purple-500/20 hover:border-purple-400/40 transition-all hover:bg-purple-500/10 transform hover:scale-110 duration-300"
                 >
-                  <SiLeetcode className="text-xl sm:text-2xl text-gray-400 hover:text-purple-400 transition-colors" />
+                  <SiLeetcode className="text-xl sm:text-2xl text-muted-foreground hover:text-purple-400 transition-colors" />
                 </a>
               </div>
             </div>
@@ -184,7 +184,7 @@ const About = () => {
           <div className="space-y-6 md:space-y-8">
             {/* Skills */}
             <div className="project-card">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-6">
                 Technical Arsenal
               </h3>
               <div className="space-y-4 md:space-y-6">
@@ -198,7 +198,7 @@ const About = () => {
                         <Badge
                           key={skill}
                           variant="secondary"
-                          className="bg-secondary/50 text-white border-purple-500/20 hover:border-purple-400/50 hover:bg-purple-500/10 transition-all duration-300 text-xs"
+                          className="bg-secondary/50 text-foreground border-purple-500/20 hover:border-purple-400/50 hover:bg-purple-500/10 transition-all duration-300 text-xs"
                         >
                           {skill}
                         </Badge>
@@ -211,7 +211,7 @@ const About = () => {
 
             {/* Achievements */}
             <div className="project-card">
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground mb-6">
                 Achievements
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
@@ -224,7 +224,7 @@ const About = () => {
                     className="block text-center p-3 md:p-4 border border-purple-500/20 rounded-lg hover:border-purple-400/40 hover:bg-purple-500/5 transition-all duration-300 group transform hover:scale-105"
                   >
                     <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400 mx-auto mb-2 group-hover:text-purple-300 transition-colors" />
-                    <h4 className="font-semibold text-white text-xs sm:text-sm flex items-center justify-center gap-1 mb-1">
+                    <h4 className="font-semibold text-foreground text-xs sm:text-sm flex items-center justify-center gap-1 mb-1">
                       <span className="text-center">{title}</span>
                       <ExternalLink className="w-2 h-2 sm:w-3 sm:h-3 text-muted-foreground opacity-70 group-hover:opacity-100 transition" />
                     </h4>

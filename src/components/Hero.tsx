@@ -12,10 +12,10 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background transition-colors duration-300"
     >
       {/* Wakandan Background with enhanced gradients */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-950/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-background" />
 
       {/* Floating vibranium particles background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -34,7 +34,7 @@ const Hero = () => {
       </div>
 
       {/* Wakandan Tech Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.02] light:opacity-[0.01]">
         <div
           className="w-full h-full"
           style={{
@@ -54,7 +54,7 @@ const Hero = () => {
           <div className="flex flex-col xl:flex-row items-center justify-center gap-8 lg:gap-16 xl:gap-20 mb-8">
             <div className="order-2 xl:order-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight font-serif">
-                <span className="block text-white mb-2 sm:mb-4 font-light italic">
+                <span className="block text-foreground mb-2 sm:mb-4 font-light italic">
                   Hey, I'm
                 </span>
                 <span className="block text-purple-400 bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent font-bold">
@@ -71,7 +71,7 @@ const Hero = () => {
         </div>
 
         {/* Subtitle */}
-        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-8 lg:mt-16 xl:mt-20 mb-4 md:mb-6 text-gray-300 max-w-4xl mx-auto">
+        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-8 lg:mt-16 xl:mt-20 mb-4 md:mb-6 text-muted-foreground max-w-4xl mx-auto">
           <span className="text-purple-400 font-semibold">
             Software Engineer
           </span>
@@ -86,7 +86,7 @@ const Hero = () => {
         </div>
 
         {/* Tagline */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 text-white/80 font-mono max-w-2xl mx-auto px-4">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 text-foreground/80 font-mono max-w-2xl mx-auto px-4">
           "Building{" "}
           <span className="text-purple-400 font-bold">
             scalable applications
@@ -94,15 +94,16 @@ const Hero = () => {
           that make an impact"
         </p>
       </div>
+      
       {/* Stats Section - Fully Responsive */}
       <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-purple-500/20 bg-black/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 wakanda-pattern">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-purple-500/20 bg-background/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 wakanda-pattern">
             <div className="text-center">
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 100+
               </div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                 LeetCode
               </div>
             </div>
@@ -110,7 +111,7 @@ const Hero = () => {
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 32+
               </div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                 Repos
               </div>
             </div>
@@ -118,7 +119,7 @@ const Hero = () => {
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 15+
               </div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                 Projects
               </div>
             </div>
@@ -126,7 +127,7 @@ const Hero = () => {
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
                 3+
               </div>
-              <div className="text-xs sm:text-sm md:text-base text-gray-400">
+              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                 Years Coding
               </div>
             </div>
