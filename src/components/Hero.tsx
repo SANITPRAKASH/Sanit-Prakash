@@ -101,7 +101,7 @@ const Hero = () => {
           <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-purple-500/20 bg-background/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 wakanda-pattern">
             <div className="text-center">
               <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
-                100+
+                200+
               </div>
               <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
                 LeetCode
