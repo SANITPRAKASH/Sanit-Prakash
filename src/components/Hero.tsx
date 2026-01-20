@@ -94,70 +94,65 @@ const Hero = () => {
             </motion.span>
           </motion.h1>
 
-        {/* Subtitle */}
-        <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-8 lg:mt-16 xl:mt-20 mb-4 md:mb-6 text-muted-foreground max-w-4xl mx-auto">
-          <span className="text-purple-400 font-semibold">
-            Software Engineer
-          </span>
-          <span className="mx-1 md:mx-2 text-purple-500">•</span>
-          <span className="text-purple-400 font-semibold">
-            Building Web Platforms & React-Native Apps
-          </span>
-          <span className="mx-1 md:mx-2 text-purple-500">•</span>
-          <span className="text-purple-400 font-semibold">
-            Exploring AI & Cloud Systems
-          </span>
-        </div>
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-xl sm:text-2xl text-muted-foreground mb-4 font-display"
+          >
+            Full Stack Developer
+          </motion.p>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10"
+          >
+            I craft web platforms & mobile apps with React, Spring Boot, and cloud magic. 
+            Passionate about building products that actually make a difference.
+          </motion.p>
 
-        {/* Tagline */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-8 md:mb-10 text-foreground/80 font-mono max-w-2xl mx-auto px-4">
-          "Building{" "}
-          <span className="text-purple-400 font-bold">
-            scalable applications
-          </span>{" "}
-          that make an impact"
-        </p>
-      </div>
-      
-      {/* Stats Section - Fully Responsive */}
-      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-10 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-4 gap-2 sm:gap-4 md:gap-6 lg:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-purple-500/20 bg-background/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 md:p-6 wakanda-pattern">
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
-                100+
-              </div>
-              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
-                LeetCode
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
-                32+
-              </div>
-              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
-                Repos
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
-                15+
-              </div>
-              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
-                Projects
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-purple-400 mb-1">
-                3+
-              </div>
-              <div className="text-xs sm:text-sm md:text-base text-muted-foreground">
-                Years Coding
-              </div>
-            </div>
-          </div>
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          >
+            <Button variant="default" size="lg" asChild>
+              <a href="#projects">View My Work</a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="#contact">Get In Touch</a>
+            </Button>
+          </motion.div>
+
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="card-elevated p-5 cursor-default"
+              >
+                <p className="font-display text-3xl font-bold gradient-text mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-xs text-muted-foreground">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </div>
 
         {/* Scroll Indicator */}
         <motion.a
@@ -177,43 +172,5 @@ const Hero = () => {
     </section>
   );
 };
-
-// Add Wakandan custom CSS
-const wakandaStyles = `
-  @keyframes spin-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
-  }
-
-  @keyframes wakanda-pulse {
-    0%, 100% { 
-      box-shadow: 0 0 20px rgba(139, 69, 255, 0.3);
-      transform: scale(1);
-    }
-    50% { 
-      box-shadow: 0 0 40px rgba(139, 69, 255, 0.6);
-      transform: scale(1.02);
-    }
-  }
-
-  .wakanda-glow:hover {
-    animation: wakanda-pulse 1.5s ease-in-out infinite;
-  }
-`;
-
-// Inject styles
-if (typeof document !== "undefined") {
-  const styleSheet = document.createElement("style");
-  styleSheet.textContent = wakandaStyles;
-  document.head.appendChild(styleSheet);
-}
 
 export default Hero;
