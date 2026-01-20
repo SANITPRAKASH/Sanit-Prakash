@@ -1,210 +1,122 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
 
-const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
-  const navItems = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "projects", label: "Arsenal" },
-    { id: "experience", label: "Experience" },
-    { id: "contact", label: "Contact" },
-  ];
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
-  };
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => item.id);
-      const scrollPos = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-
-          if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-purple-500/20 wakanda-pattern">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          {/* Wakandan Logo */}
-          <button
-            onClick={() => scrollToSection("hero")}
-            className="font-bold text-lg sm:text-xl text-foreground hover:text-purple-400 transition-all duration-300 group"
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <motion.a 
+            href="#" 
+            className="font-display text-xl font-bold text-foreground"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <span className="text-purple-gradient bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-300 group-hover:to-purple-500 transition-all duration-300">
-              SP
-            </span>
-            <div className="w-0 group-hover:w-full h-0.5 bg-purple-500 transition-all duration-300 mt-1"></div>
-          </button>
+            sanit<span className="gradient-text">.</span>
+          </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-            {navItems.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className={`relative text-sm lg:text-base font-medium transition-all duration-300 hover:text-purple-400 group ${
-                  activeSection === id ? "text-purple-400" : "text-muted-foreground"
-                }`}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={link.label}
+                href={link.href}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
               >
-                {label}
-                {/* Wakandan active indicator */}
-                <div
-                  className={`absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-500 transition-all duration-300 ${
-                    activeSection === id
-                      ? "scale-x-100"
-                      : "scale-x-0 group-hover:scale-x-50"
-                  }`}
-                ></div>
-                {/* Wakandan glow effect */}
-                {activeSection === id && (
-                  <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-purple-400 blur-sm opacity-60"></div>
-                )}
-              </button>
+                {link.label}
+              </motion.a>
             ))}
-
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
-            {/* Wakandan Resume Button */}
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs lg:text-sm transition-all duration-300 wakanda-glow-subtle"
-              onClick={() =>
-                window.open(
-                  "https://drive.google.com/file/d/1_3L-XdF4DeXC3HhIl2vcUA37dt5BdoP0/view?usp=sharing",
-                  "_blank"
-                )
-              }
-            >
-              Resume
-            </Button>
           </div>
+
+          {/* CTA Button */}
+          <motion.div 
+            className="hidden md:block"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Button variant="default" size="sm" asChild>
+              <a href="#contact">Let's Talk</a>
+            </Button>
+          </motion.div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transition-colors duration-300"
-            onClick={() => setIsOpen(!isOpen)}
+          <button
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
-        {/* Mobile Navigation with Wakandan styling */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-purple-500/20 bg-background/95 backdrop-blur-md">
-            <div className="flex flex-col space-y-3">
-              {navItems.map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`text-left text-sm font-medium transition-all duration-300 hover:text-purple-400 px-2 py-1 rounded-md relative group ${
-                    activeSection === id
-                      ? "text-purple-400 bg-purple-500/10"
-                      : "text-muted-foreground hover:bg-purple-500/5"
-                  }`}
-                >
-                  {label}
-                  {activeSection === id && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-purple-500 rounded-r"></div>
-                  )}
-                </button>
-              ))}
-
-              {/* Mobile Theme Toggle */}
-              <div className="flex items-center justify-between px-2 py-1">
-                <span className="text-sm font-medium text-muted-foreground">Theme</span>
-                <ThemeToggle />
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="py-4 flex flex-col gap-2">
+                {navLinks.map((link, index) => (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="px-4 py-3 text-muted-foreground hover:text-foreground hover:bg-muted rounded-xl transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </motion.a>
+                ))}
+                <div className="pt-2 px-4">
+                  <Button variant="default" size="sm" className="w-full" asChild>
+                    <a href="#contact">Let's Talk</a>
+                  </Button>
+                </div>
               </div>
-
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-purple-500/40 text-purple-400 hover:border-purple-400 hover:bg-purple-500/20 hover:text-purple-300 text-xs w-fit mt-3 mx-2"
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1pETEU29LNqvUJ4qRHW20IonKuuIGeoOp/view?usp=sharing",
-                    "_blank"
-                  )
-                }
-              >
-                Resume
-              </Button>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-
-      {/* Wakandan energy line at bottom of nav */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent"></div>
-    </nav>
+    </motion.nav>
   );
 };
 
-// Add Wakandan navigation styles
-const wakandaNavStyles = `
-  .wakanda-glow-subtle:hover {
-    box-shadow: 0 0 15px rgba(139, 69, 255, 0.3);
-  }
-
-  .text-purple-gradient {
-    background: linear-gradient(135deg, #8b45ff, #a855f7, #c084fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  @keyframes wakanda-shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-  }
-
-  .wakanda-shimmer::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(139, 69, 255, 0.2),
-      transparent
-    );
-    animation: wakanda-shimmer 2s ease-in-out infinite;
-  }
-`;
-
-// Inject Wakandan styles
-if (typeof document !== "undefined") {
-  const styleSheet = document.createElement("style");
-  styleSheet.textContent = wakandaNavStyles;
-  document.head.appendChild(styleSheet);
-}
-
-export default Navigation;
+export default Navbar;
