@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 const stats = [
-  { value: "200+", label: "LeetCode" },
-  { value: "32+", label: "Repos" },
+  { value: "100+", label: "LeetCode" },
+  { value: "40+", label: "Repos" },
   { value: "15+", label: "Projects" },
   { value: "3+", label: "Years Coding" },
 ];
