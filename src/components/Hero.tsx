@@ -9,7 +9,7 @@ const stats = [
   { value: "3+", label: "Years Coding" },
 ];
 
-const HeroSection = () => {
+const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated Background Blobs - EXACT Lovable style */}
