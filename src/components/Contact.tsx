@@ -9,7 +9,8 @@ import {
   Linkedin,
   Github,
   ArrowUpRight,
-  Globe
+  Globe,
+  Phone
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -218,12 +219,14 @@ const ContactSection = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   Prefer a quick chat?
                 </p>
-                <Button variant="outline" size="sm" className="w-full gap-2" asChild>
-                  <a href="mailto:sanitprakash@outlook.com">
-                    Schedule a Call
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
+                 <Button
+                  className="btn-warrior w-full py-3 px-4 transition-all duration-300 hover:scale-105 active:scale-95"
+                  onClick={() => window.open("tel:+918050405797", "_blank")}
+                >
+                  <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
+                  <span className="truncate">Contact Me</span>
                 </Button>
+
               </motion.div>
             </motion.div>
           </div>

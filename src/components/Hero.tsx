@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Sparkles } from "lucide-react";
 
 const stats = [
-  { value: "100+", label: "LeetCode" },
+  { value: "200+", label: "LeetCode" },
   { value: "32+", label: "Repos" },
   { value: "15+", label: "Projects" },
   { value: "3+", label: "Years Coding" },
@@ -56,7 +56,9 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
             </span>
-            <span className="text-sm text-muted-foreground">Open to opportunities</span>
+            <span className="text-sm text-muted-foreground">
+              Open to opportunities
+            </span>
           </motion.div>
 
           {/* Profile Photo */}
@@ -82,8 +84,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
           >
-            Hi, I'm{" "}
-            <span className="gradient-text">Sanit</span>
+            Hi, I'm <span className="gradient-text">Sanit Prakash</span>
             <motion.span
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -101,17 +102,18 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl sm:text-2xl text-muted-foreground mb-4 font-display"
           >
-            Full Stack Developer
+            Software Developer
           </motion.p>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10"
           >
-            I craft web platforms & mobile apps with React, Spring Boot, and cloud magic. 
-            Passionate about building products that actually make a difference.
+            I craft web platforms & mobile apps with React, Spring Boot, and
+            cloud magic. Passionate about building products that actually make a
+            difference.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -122,7 +124,13 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
           >
             <Button variant="default" size="lg" asChild>
-              <a href="#projects">View My Work</a>
+              <a
+                href="https://drive.google.com/file/d/1dBYSjAUKaDROdDUMXLlcCYg14a6JOXyP/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Resume
+              </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="#contact">Get In Touch</a>

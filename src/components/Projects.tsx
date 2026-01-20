@@ -1,370 +1,428 @@
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Zap } from "lucide-react";
-import { useState } from "react";
+import { ExternalLink, Github, Sparkles, ArrowUpRight, Zap } from "lucide-react";
 
-const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+type ProjectCategory = "All" | "Full-Stack" | "Frontend" | "Backend" | "Mobile" | "AI & ML";
 
-  const categories = [
-    "All",
-    "Full-Stack",
-    "Frontend",
-    "Backend",
-    "Mobile",
-    "AI & ML",
-  ];
+const categories: ProjectCategory[] = ["All", "Full-Stack", "Frontend", "Backend", "Mobile", "AI & ML"];
 
-  const projects = [
-    // Full-Stack Projects
-    {
-      id: 1,
-      title: "AI Form Generator",
-      category: "Full-Stack",
-      description:
-        "AI-driven dynamic form builder with payment integration and clipboard-ready URLs. Automated form creation boosting efficiency by 40%.",
-      tech: [
-        "Next.js",
-        "Prisma",
-        "Supabase",
-        "PostgreSQL",
-        "Google Gemini AI",
-        "Razorpay",
-        "Docker",
-      ],
-      github: "https://github.com/SANITPRAKASH/ai-form-generator",
-      live: "https://ai-form-generator-nu.vercel.app/",
-      featured: true,
-      status: "SaaS Production",
-    },
-    {
-      id: 2,
-      title: "Postify Social Media",
-      category: "Full-Stack",
-      description:
-        "Modern social media platform with real-time features, socket connections, chat system, and live notifications.",
-      tech: ["React", "Redux", "MongoDB", "Socket.IO", "GitHub Actions"],
-      github: "https://github.com/SANITPRAKASH/Postify_socialmedia",
-      live: "https://postify-wyo1.onrender.com/",
-      featured: true,
-      status: "Real-time Platform",
-    },
-    {
-      id: 3,
-      title: "Fitness Tracker",
-      category: "Full-Stack",
-      description:
-        "TypeScript-based fitness tracking application with progress monitoring.",
-      tech: ["TypeScript", "React Native", "Local Storage"],
-      github: "https://github.com/SANITPRAKASH/FitnessTracker",
-      live: "https://fitness-tracker-henna.vercel.app/",
-      featured: false,
-      status: "Health & Fitness",
-    },
-    {
-      id: 4,
-      title: "Pushkara Expressions",
-      category: "Full-Stack",
-      description:
-        "Boutique e-commerce store with glassmorphism UI and smooth user experience. Freelance project for local business.",
-      tech: ["JavaScript", "Node.js", "Payment Gateway"],
-      github: "https://github.com/SANITPRAKASH/Pushkara_Expressions",
-      live: "",
-      featured: false,
-      status: "Client Project - Ongoing",
-    },
-    {
-      id: 5,
-      title: "Food Order & Delivery",
-      category: "Full-Stack",
-      description:
-        "Complete ordering system with payment integration and delivery tracking workflow.",
-      tech: ["JavaScript", "Node.js", "MongoDB"],
-      github: "https://github.com/SANITPRAKASH/Food_order_and_del_app",
-      live: "https://food-order-and-del-appfront.onrender.com",
-      featured: false,
-      status: "Delivery Platform",
-    },
+const projects = [
+  // NEW FEATURED PROJECTS
+  {
+    id: 1,
+    title: "RoomieX - Smart Room Rental",
+    category: ["Full-Stack"],
+    description: "Full-stack room rental platform with real-time features, enabling users to browse, list, and interact around PG, shared, and private rooms.",
+    features: [
+      "Real-time communication using WebSockets (Socket.IO)",
+      "AWS S3 with CloudFront for scalable media delivery",
+      "AI-based image analysis with Google Gemini",
+      "Containerized with Docker and GitHub Actions CI/CD"
+    ],
+    techStack: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Socket.IO", "AWS S3", "CloudFront", "Google Gemini AI", "Docker"],
+    github: "#",
+    liveDemo: "#",
+    color: "primary",
+    isNew: true,
+    tag: "Real-time Platform"
+  },
+  {
+    id: 2,
+    title: "SocietyNest - Society Management",
+    category: ["Full-Stack"],
+    description: "Comprehensive society management platform for apartment communities with complaint tracking, digital notice boards, and role-based access control.",
+    features: [
+      "JWT authentication with BCrypt password hashing",
+      "Glassmorphism design with Framer Motion animations",
+      "End-to-end complaint workflow (OPEN → RESOLVED → CLOSED)",
+      "Docker containerization on Render & Vercel"
+    ],
+    techStack: ["Spring Boot", "Spring Security", "Hibernate", "MySQL", "React.js", "Framer Motion", "shadcn/ui", "Docker"],
+    github: "#",
+    liveDemo: "#",
+    color: "secondary",
+    isNew: true,
+    tag: "Enterprise Platform"
+  },
+  {
+    id: 3,
+    title: "Kalyani Collections - Boutique",
+    category: ["Full-Stack"],
+    description: "Production-ready boutique web application for product discovery and in-store appointment booking. Freelance project for local business.",
+    features: [
+      "JWT + Email OTP (2FA) authentication",
+      "Advanced filtering and image-optimized product pages",
+      "Wishlist cart with appointment booking system",
+      "Automated email notifications with Nodemailer"
+    ],
+    techStack: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "JWT", "Zustand", "Nodemailer", "Docker"],
+    github: "#",
+    liveDemo: "#",
+    color: "accent",
+    isNew: true,
+    tag: "Client Project"
+  },
 
-    // Frontend Projects
-    {
-      id: 6,
-      title: "Video Call App",
-      category: "Frontend",
-      description: "A simple and responsive video calling application.",
-      tech: ["React", "Tailwind CSS", "ZegoCloud_api"],
-      github: "https://github.com/SANITPRAKASH/Videoconference",
-      live: "https://videoconference-ib87.onrender.com/",
-      featured: false,
-      status: "Video Call App",
-    },
-    {
-      id: 7,
-      title: "Nike Product Showcase",
-      category: "Frontend",
-      description:
-        "Responsive product landing page with smooth animations and modern design patterns.",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/SANITPRAKASH/Nike_Front_sheet",
-      live: "https://sanitprakash.github.io/Nike_Front_sheet/",
-      featured: false,
-      status: "Landing Page",
-    },
-    {
-      id: 8,
-      title: "Weather App",
-      category: "Frontend",
-      description:
-        "Real-time weather application with API integration and location-based forecasts.",
-      tech: ["React", "JavaScript", "HTML", "Weather API", "CSS3"],
-      github: "https://github.com/SANITPRAKASH/WEATHER-APP",
-      live: "https://sanitprakash.github.io/WEATHER-APP/",
-      featured: false,
-      status: "Utility App",
-    },
-    {
-      id: 9,
-      title: "Movie Search App",
-      category: "Frontend",
-      description:
-        "OMDB API integration for movie searching with dynamic content rendering.",
-      tech: ["HTML", "CSS", "JavaScript", "React", "OMDB API"],
-      github: "https://github.com/SANITPRAKASH/Movie_SEARCH_APP",
-      live: "https://movie-search-app-uoit.onrender.com/",
-      featured: false,
-      status: "Entertainment",
-    },
-    {
-      id: 10,
-      title: "To-do List app",
-      category: "Frontend",
-      description:
-        "The ToDo List App helps users manage their daily tasks by adding, removing, and marking them as complete",
-      tech: ["React", "JavaScript", "CSS3", "HTML5"],
-      github: "https://github.com/SANITPRAKASH/to-do-list-app",
-      live: "https://sanitprakash.github.io/to-do-list-app/",
-      featured: false,
-      status: "Utility Tools",
-    },
+  // EXISTING FULL-STACK PROJECTS
+  {
+    id: 4,
+    title: "AI Form Generator",
+    category: ["Full-Stack", "AI & ML"],
+    description: "AI-driven dynamic form builder with payment integration and clipboard-ready URLs. Automated form creation boosting efficiency by 40%.",
+    features: [
+      "Google Gemini AI for intelligent form generation",
+      "Razorpay payment gateway integration"
+    ],
+    techStack: ["Next.js", "Prisma", "Supabase", "PostgreSQL", "Google Gemini AI", "Razorpay", "Docker"],
+    github: "https://github.com/SANITPRAKASH/ai-form-generator",
+    liveDemo: "https://ai-form-generator-nu.vercel.app/",
+    color: "primary",
+    isNew: false,
+    tag: "SaaS Production"
+  },
+  {
+    id: 5,
+    title: "Postify Social Media",
+    category: ["Full-Stack"],
+    description: "Modern social media platform with real-time features, socket connections, chat system, and live notifications.",
+    features: [
+      "Real-time chat with Socket.IO",
+      "Live notifications and activity feeds"
+    ],
+    techStack: ["React", "Redux", "MongoDB", "Socket.IO", "GitHub Actions"],
+    github: "https://github.com/SANITPRAKASH/Postify_socialmedia",
+    liveDemo: "https://postify-wyo1.onrender.com/",
+    color: "secondary",
+    isNew: false,
+    tag: "Real-time Platform"
+  },
+  {
+    id: 6,
+    title: "Fitness Tracker",
+    category: ["Full-Stack"],
+    description: "TypeScript-based fitness tracking application with progress monitoring.",
+    techStack: ["TypeScript", "React Native", "Local Storage"],
+    github: "https://github.com/SANITPRAKASH/FitnessTracker",
+    liveDemo: "https://fitness-tracker-henna.vercel.app/",
+    color: "accent",
+    isNew: false,
+    tag: "Health & Fitness"
+  },
+  {
+    id: 7,
+    title: "Pushkara Expressions",
+    category: ["Full-Stack"],
+    description: "Boutique e-commerce store with glassmorphism UI and smooth user experience. Freelance project for local business.",
+    techStack: ["JavaScript", "Node.js", "Payment Gateway"],
+    github: "https://github.com/SANITPRAKASH/Pushkara_Expressions",
+    liveDemo: "",
+    color: "primary",
+    isNew: false,
+    tag: "Ecommerce"
+  },
+  {
+    id: 8,
+    title: "Food Order & Delivery",
+    category: ["Full-Stack"],
+    description: "Complete ordering system with payment integration and delivery tracking workflow.",
+    techStack: ["JavaScript", "Node.js", "MongoDB"],
+    github: "https://github.com/SANITPRAKASH/Food_order_and_del_app",
+    liveDemo: "https://food-order-and-del-appfront.onrender.com",
+    color: "secondary",
+    isNew: false,
+    tag: "Delivery Platform"
+  },
 
-    // Backend Projects
-    {
-      id: 11,
-      title: "Social Media Backend",
-      category: "Backend",
-      description:
-        "Social media backend with REST APIs, JWT authentication, and user management system.",
-      tech: ["Java", "Spring Boot", "MySQL", "JWT"],
-      github: "https://github.com/SANITPRAKASH/javasocial",
-      live: "",
-      featured: false,
-      status: "API Service",
-    },
-    {
-      id: 12,
-      title: "Ecommerce Backend",
-      category: "Backend",
-      description:
-        "Spring Boot practice project with complete ecommerce backend functionality.",
-      tech: ["Java", "Spring Boot", "MySQL", "REST APIs"],
-      github: "https://github.com/SANITPRAKASH/MultivendorEcommerce",
-      live: "",
-      featured: false,
-      status: "Practice Project",
-    },
-    {
-      id: 13,
-      title: "Food Store Backend",
-      category: "Backend",
-      description:
-        "Spring Boot practice project a robust backend for a food ordering system.",
-      tech: ["Java", "Spring Boot", "MySQL", "REST APIs", "JWT"],
-      github: "https://github.com/SANITPRAKASH/Ruchi-Hub",
-      live: "",
-      featured: false,
-      status: "Practice Project",
-    },
+  // FRONTEND PROJECTS
+  {
+    id: 9,
+    title: "Video Call App",
+    category: ["Frontend"],
+    description: "A simple and responsive video calling application.",
+    techStack: ["React", "Tailwind CSS", "ZegoCloud API"],
+    github: "https://github.com/SANITPRAKASH/Videoconference",
+    liveDemo: "https://videoconference-ib87.onrender.com/",
+    color: "accent",
+    isNew: false,
+    tag: "Video Call App"
+  },
+  {
+    id: 10,
+    title: "Nike Product Showcase",
+    category: ["Frontend"],
+    description: "Responsive product landing page with smooth animations and modern design patterns.",
+    techStack: ["React", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/SANITPRAKASH/Nike_Front_sheet",
+    liveDemo: "https://sanitprakash.github.io/Nike_Front_sheet/",
+    color: "primary",
+    isNew: false,
+    tag: "Landing Page"
+  },
+  {
+    id: 11,
+    title: "Weather App",
+    category: ["Frontend"],
+    description: "Real-time weather application with API integration and location-based forecasts.",
+    techStack: ["React", "JavaScript", "Weather API", "CSS3", "HTML"],
+    github: "https://github.com/SANITPRAKASH/WEATHER-APP",
+    liveDemo: "https://sanitprakash.github.io/WEATHER-APP/",
+    color: "secondary",
+    isNew: false,
+    tag: "Utility App"
+  },
+  {
+    id: 12,
+    title: "Movie Search App",
+    category: ["Frontend"],
+    description: "OMDB API integration for movie searching with dynamic content rendering.",
+    techStack: ["React", "JavaScript", "OMDB API", "HTML", "CSS"],
+    github: "https://github.com/SANITPRAKASH/Movie_SEARCH_APP",
+    liveDemo: "https://movie-search-app-uoit.onrender.com/",
+    color: "accent",
+    isNew: false,
+    tag: "Entertainment"
+  },
+  {
+    id: 13,
+    title: "To-do List App",
+    category: ["Frontend"],
+    description: "The ToDo List App helps users manage their daily tasks by adding, removing, and marking them as complete.",
+    techStack: ["React", "JavaScript", "CSS3", "HTML5"],
+    github: "https://github.com/SANITPRAKASH/to-do-list-app",
+    liveDemo: "https://sanitprakash.github.io/to-do-list-app/",
+    color: "primary",
+    isNew: false,
+    tag: "Utility Tools"
+  },
 
-    // Mobile Projects
-    {
-      id: 14,
-      title: "React Native Restate",
-      category: "Mobile",
-      description:
-        "Real estate mobile application built with React Native and TypeScript.",
-      tech: ["React Native", "TypeScript", "Expo"],
-      github: "https://github.com/SANITPRAKASH/React_Native_restate",
-      live: "",
-      featured: false,
-      status: "Real Estate App",
-    },
+  // BACKEND PROJECTS
+  {
+    id: 14,
+    title: "Social Media Backend",
+    category: ["Backend"],
+    description: "Social media backend with REST APIs, JWT authentication, and user management system.",
+    techStack: ["Java", "Spring Boot", "MySQL", "JWT"],
+    github: "https://github.com/SANITPRAKASH/javasocial",
+    liveDemo: "",
+    color: "secondary",
+    isNew: false,
+    tag: "API Service"
+  },
+  {
+    id: 15,
+    title: "Ecommerce Backend",
+    category: ["Backend"],
+    description: "Spring Boot practice project with complete ecommerce backend functionality.",
+    techStack: ["Java", "Spring Boot", "MySQL", "REST APIs"],
+    github: "https://github.com/SANITPRAKASH/MultivendorEcommerce",
+    liveDemo: "",
+    color: "accent",
+    isNew: false,
+    tag: "Practice Project"
+  },
+  {
+    id: 16,
+    title: "Food Store Backend",
+    category: ["Backend"],
+    description: "Spring Boot practice project a robust backend for a food ordering system.",
+    techStack: ["Java", "Spring Boot", "MySQL", "REST APIs", "JWT"],
+    github: "https://github.com/SANITPRAKASH/Ruchi-Hub",
+    liveDemo: "",
+    color: "primary",
+    isNew: false,
+    tag: "Practice Project"
+  },
 
-    // AI & Machine Learning
-    {
-      id: 15,
-      title: "Fake Job Post Detection",
-      category: "AI & ML",
-      description:
-        "Machine learning project using NLP to detect fraudulent job postings and protect job seekers.",
-      tech: ["Python", "Jupyter Notebook", "NLP", "Scikit-learn"],
-      github: "https://github.com/SANITPRAKASH/fakejobpostdetection",
-      live: "",
-      featured: false,
-      status: "ML Research",
-    },
-  ];
+  // MOBILE PROJECTS
+  {
+    id: 17,
+    title: "React Native Restate",
+    category: ["Mobile"],
+    description: "Real estate mobile application built with React Native and TypeScript.",
+    techStack: ["React Native", "TypeScript", "Expo"],
+    github: "https://github.com/SANITPRAKASH/React_Native_restate",
+    liveDemo: "",
+    color: "secondary",
+    isNew: false,
+    tag: "Real Estate App"
+  },
 
-  const filteredProjects =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === activeCategory);
+  // AI & ML PROJECTS
+  {
+    id: 18,
+    title: "Fake Job Post Detection",
+    category: ["AI & ML"],
+    description: "Machine learning project using NLP to detect fraudulent job postings and protect job seekers.",
+    techStack: ["Python", "Jupyter Notebook", "NLP", "Scikit-learn"],
+    github: "https://github.com/SANITPRAKASH/fakejobpostdetection",
+    liveDemo: "",
+    color: "accent",
+    isNew: false,
+    tag: "ML Research"
+  },
+];
 
-  const featuredProjects = projects.filter((project) => project.featured);
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const filteredProjects = activeCategory === "All"
+    ? projects
+    : projects.filter((p) => p.category.includes(activeCategory));
 
   return (
-    <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-purple-gradient">My</span> Projects
-          </h2>
-          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mb-6 md:mb-8 px-4">
-            Scalable applications built with cutting-edge technologies and clean
-            architecture.
-          </p>
-          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-purple-500 to-purple-600 mx-auto"></div>
-        </div>
+    <section id="projects" className="py-24 relative" ref={ref}>
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-transparent to-muted/30 pointer-events-none" />
 
-        {/* Category Filter - Enhanced Vibranium Style */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 px-4">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(category)}
-              className={`text-xs sm:text-sm transition-all duration-300 ${
-                activeCategory === category
-                  ? "btn-vibranium bg-gradient-to-r from-primary to-wakanda text-primary-foreground wakanda-glow"
-                  : "btn-wakanda border-primary/30 hover:border-primary/50"
-              }`}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+      <div className="container relative z-10 px-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
+          {/* Header */}
+          <motion.div variants={itemVariants} className="text-center mb-12">
+            <span className="text-sm font-medium text-primary uppercase tracking-wider">
+              Portfolio
+            </span>
+            <h2 className="font-display text-4xl sm:text-5xl font-bold mt-3 mb-6">
+              Selected <span className="gradient-text">Work</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Scalable applications built with cutting-edge technologies and clean architecture.
+            </p>
+          </motion.div>
 
-        {/* All Projects Grid - Enhanced Vibranium Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="project-card vibranium-card group wakanda-pattern relative overflow-hidden"
-            >
-              <div className="flex flex-col sm:flex-row justify-between items-start mb-4 gap-2">
-                <div className="flex flex-wrap gap-2">
-                  <Badge
-                    variant="outline"
-                    className="border-primary/30 text-primary text-xs bg-primary/5"
-                  >
-                    {project.category}
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="text-xs bg-silver-accent text-foreground"
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
-                <div className="flex gap-2 flex-shrink-0">
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-primary/10 metallic-glow"
-                    asChild
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4 text-primary hover:text-primary/80" />
-                    </a>
-                  </Button>
-                  {/* Only show live link button if project has a live URL */}
-                  {project.live && project.live.trim() !== "" && (
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="p-2 h-7 w-7 sm:h-8 sm:w-8 hover:bg-primary/10 metallic-glow"
-                      asChild
-                    >
-                      <a
-                        href={project.live}
+          {/* Category Filter */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex flex-wrap justify-center gap-2 mb-12"
+          >
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  activeCategory === category
+                    ? "bg-foreground text-background shadow-lg"
+                    : "bg-card border border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
+                }`}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Projects Grid */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                layout
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+                className="card-elevated overflow-hidden group"
+              >
+                <div className={`h-1 w-full ${
+                  project.color === 'primary' ? 'bg-primary' :
+                  project.color === 'secondary' ? 'bg-secondary' : 'bg-accent'
+                }`} />
+                
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {project.isNew && (
+                        <Badge variant="outline" className="gap-1">
+                          <Sparkles className="w-3 h-3" />
+                          New
+                        </Badge>
+                      )}
+                      {project.tag && (
+                        <Badge variant="outline">{project.tag}</Badge>
+                      )}
+                    </div>
+                    <div className="flex gap-2 flex-shrink-0">
+                      <motion.a
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
                       >
-                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-primary hover:text-primary/80" />
-                      </a>
-                    </Button>
+                        <Github className="w-4 h-4" />
+                      </motion.a>
+                      {project.liveDemo && project.liveDemo.trim() !== "" && (
+                        <motion.a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+                        >
+                          <ArrowUpRight className="w-4 h-4" />
+                        </motion.a>
+                      )}
+                    </div>
+                  </div>
+
+                  <h3 className="font-display font-bold text-xl mb-2 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  {project.features && (
+                    <div className="mb-4 space-y-1">
+                      {project.features.slice(0, 2).map((feature, i) => (
+                        <p key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                          <span className={`mt-1.5 w-1 h-1 rounded-full flex-shrink-0 ${
+                            project.color === 'primary' ? 'bg-primary' :
+                            project.color === 'secondary' ? 'bg-secondary' : 'bg-accent'
+                          }`} />
+                          <span className="line-clamp-1">{feature}</span>
+                        </p>
+                      ))}
+                    </div>
                   )}
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.map((tech) => (
+                      <Badge key={tech} variant="outline" className="text-xs">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <h4 className="text-base sm:text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {project.title}
-              </h4>
-
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-3 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-1 sm:gap-2">
-                {project.tech.slice(0, 10).map((tech) => (
-                  <Badge
-                    key={tech}
-                    variant="secondary"
-                    className="text-xs bg-vibranium border-border/50 text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-                {project.tech.length > 10 && (
-                  <Badge
-                    variant="secondary"
-                    className="text-xs bg-vibranium border-border/50 text-muted-foreground"
-                  >
-                    +{project.tech.length - 10}
-                  </Badge>
-                )}
-              </div>
-
-              {/* Enhanced Wakandan Energy Effect on Hover */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-wakanda/5 transition-all duration-500 pointer-events-none"></div>
-              
-              {/* Vibranium shimmer effect */}
-              <div className="absolute inset-0 rounded-xl overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 vibranium-shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Show message if no projects match filter */}
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <div className="vibranium-card inline-block">
-              <Zap className="w-12 h-12 text-primary/50 mx-auto mb-4 metallic-pulse" />
-              <p className="text-muted-foreground">
-                No projects found in this category.
-              </p>
-            </div>
-          </div>
-        )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

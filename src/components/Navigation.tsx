@@ -42,7 +42,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            sanit<span className="gradient-text">.</span>
+            SP<span className="gradient-text">.</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -68,10 +68,17 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <Button variant="default" size="sm" asChild>
-              <a href="#contact">Let's Talk</a>
+           <Button variant="default" size="lg" asChild>
+              <a
+                href="https://drive.google.com/file/d/1dBYSjAUKaDROdDUMXLlcCYg14a6JOXyP/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Resume
+              </a>
             </Button>
           </motion.div>
+          
 
           {/* Mobile Menu Button */}
           <button
