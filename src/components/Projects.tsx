@@ -22,8 +22,8 @@ const projects = [
       "Containerized with Docker and GitHub Actions CI/CD"
     ],
     techStack: ["React.js", "TypeScript", "Node.js", "PostgreSQL", "Socket.IO", "AWS S3", "CloudFront", "Google Gemini AI", "Docker"],
-    github: "#",
-    liveDemo: "#",
+    github: "https://github.com/SANITPRAKASH/Roomiex",
+    liveDemo: "https://roomiex.vercel.app/",
     color: "primary",
     isNew: true,
     tag: "Real-time Platform"
@@ -40,8 +40,8 @@ const projects = [
       "Docker containerization on Render & Vercel"
     ],
     techStack: ["Spring Boot", "Spring Security", "Hibernate", "MySQL", "React.js", "Framer Motion", "shadcn/ui", "Docker"],
-    github: "#",
-    liveDemo: "#",
+    github: "https://github.com/SANITPRAKASH/societynest-frontend",
+    liveDemo: "https://societynest-frontend.vercel.app/",
     color: "secondary",
     isNew: true,
     tag: "Enterprise Platform"
@@ -58,8 +58,8 @@ const projects = [
       "Automated email notifications with Nodemailer"
     ],
     techStack: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "JWT", "Zustand", "Nodemailer", "Docker"],
-    github: "#",
-    liveDemo: "#",
+    github: "https://github.com/SANITPRAKASH/PK",
+    liveDemo: "https://kalyani-collections.onrender.com/",
     color: "accent",
     isNew: true,
     tag: "Client Project"
@@ -110,20 +110,9 @@ const projects = [
     isNew: false,
     tag: "Health & Fitness"
   },
+ 
   {
     id: 7,
-    title: "Pushkara Expressions",
-    category: ["Full-Stack"],
-    description: "Boutique e-commerce store with glassmorphism UI and smooth user experience. Freelance project for local business.",
-    techStack: ["JavaScript", "Node.js", "Payment Gateway"],
-    github: "https://github.com/SANITPRAKASH/Pushkara_Expressions",
-    liveDemo: "",
-    color: "primary",
-    isNew: false,
-    tag: "Ecommerce"
-  },
-  {
-    id: 8,
     title: "Food Order & Delivery",
     category: ["Full-Stack"],
     description: "Complete ordering system with payment integration and delivery tracking workflow.",
@@ -137,7 +126,7 @@ const projects = [
 
   // FRONTEND PROJECTS
   {
-    id: 9,
+    id: 8,
     title: "Video Call App",
     category: ["Frontend"],
     description: "A simple and responsive video calling application.",
@@ -149,7 +138,7 @@ const projects = [
     tag: "Video Call App"
   },
   {
-    id: 10,
+    id: 9,
     title: "Nike Product Showcase",
     category: ["Frontend"],
     description: "Responsive product landing page with smooth animations and modern design patterns.",
@@ -161,7 +150,7 @@ const projects = [
     tag: "Landing Page"
   },
   {
-    id: 11,
+    id: 10,
     title: "Weather App",
     category: ["Frontend"],
     description: "Real-time weather application with API integration and location-based forecasts.",
@@ -173,7 +162,7 @@ const projects = [
     tag: "Utility App"
   },
   {
-    id: 12,
+    id: 11,
     title: "Movie Search App",
     category: ["Frontend"],
     description: "OMDB API integration for movie searching with dynamic content rendering.",
@@ -185,7 +174,7 @@ const projects = [
     tag: "Entertainment"
   },
   {
-    id: 13,
+    id: 12,
     title: "To-do List App",
     category: ["Frontend"],
     description: "The ToDo List App helps users manage their daily tasks by adding, removing, and marking them as complete.",
@@ -199,7 +188,7 @@ const projects = [
 
   // BACKEND PROJECTS
   {
-    id: 14,
+    id: 13,
     title: "Social Media Backend",
     category: ["Backend"],
     description: "Social media backend with REST APIs, JWT authentication, and user management system.",
@@ -211,7 +200,7 @@ const projects = [
     tag: "API Service"
   },
   {
-    id: 15,
+    id: 14,
     title: "Ecommerce Backend",
     category: ["Backend"],
     description: "Spring Boot practice project with complete ecommerce backend functionality.",
@@ -223,7 +212,7 @@ const projects = [
     tag: "Practice Project"
   },
   {
-    id: 16,
+    id: 15,
     title: "Food Store Backend",
     category: ["Backend"],
     description: "Spring Boot practice project a robust backend for a food ordering system.",
@@ -237,7 +226,7 @@ const projects = [
 
   // MOBILE PROJECTS
   {
-    id: 17,
+    id: 16,
     title: "React Native Restate",
     category: ["Mobile"],
     description: "Real estate mobile application built with React Native and TypeScript.",
@@ -251,7 +240,7 @@ const projects = [
 
   // AI & ML PROJECTS
   {
-    id: 18,
+    id: 17,
     title: "Fake Job Post Detection",
     category: ["AI & ML"],
     description: "Machine learning project using NLP to detect fraudulent job postings and protect job seekers.",
@@ -263,7 +252,6 @@ const projects = [
     tag: "ML Research"
   },
 ];
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
