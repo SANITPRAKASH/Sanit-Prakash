@@ -59,7 +59,7 @@ const projects = [
     ],
     techStack: ["Next.js", "Node.js", "PostgreSQL", "TypeScript", "JWT", "Zustand", "Nodemailer", "Docker"],
     github: "https://github.com/SANITPRAKASH/PK",
-    liveDemo: "https://kalyani-collections.onrender.com/",
+    liveDemo: "https://kalyanicollections.vercel.app/",
     color: "accent",
     isNew: true,
     tag: "Client Project"
